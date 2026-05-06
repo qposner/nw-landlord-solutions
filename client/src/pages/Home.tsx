@@ -1,25 +1,60 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { ArrowRight, ArrowUpRight, CheckCircle2, Cpu, Gauge, Network } from "lucide-react";
+import { Link } from "wouter";
+import { assets, portalUrl } from "@/lib/siteData";
+import { HowItWorks, MetricStrip, PortalCTA, ServicesOverview, SectionHeader } from "@/components/SharedSections";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
+/*
+Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. The home page should establish landlord-side exclusivity, legal-tech differentiation, and operational credibility immediately.
+*/
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const why = [
+    { icon: Cpu, title: "Technology-first matter visibility", text: "Portal access, structured intake, and standardized status language reduce internal friction for management teams." },
+    { icon: Gauge, title: "Built for turnaround discipline", text: "The process model prioritizes complete files, clean sequencing, and rapid movement through known procedural stages." },
+    { icon: Network, title: "Local procedural knowledge", text: "Twenty-three years in Clark County practice informs court-stage expectations and property-management operating realities." },
+  ];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
-    </div>
+    <>
+      <section className="hero-section">
+        <div className="hero-bg" style={{ backgroundImage: "linear-gradient(90deg, rgba(10,15,30,1) 0%, rgba(10,15,30,.88) 38%, rgba(10,15,30,.28) 100%), url(" + assets.hero + ")" }} />
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">Washington landlord-side eviction infrastructure</p>
+            <h1>Exclusive landlord representation, delivered like a legal technology product.</h1>
+            <p>NW Landlord Solutions serves professional property management companies and portfolio landlords across Clark County and Puget Sound with efficient, landlord-side eviction process management.</p>
+            <div className="hero-actions">
+              <a className="portal-button portal-button-large" href={portalUrl} target="_blank" rel="noreferrer">Start an Eviction <ArrowUpRight size={18} /></a>
+              <a className="secondary-button" href={portalUrl} target="_blank" rel="noreferrer">Client Portal <ArrowRight size={18} /></a>
+            </div>
+          </div>
+          <div className="hero-panel" aria-label="Operational summary">
+            <p className="card-label">Matter operating model</p>
+            <div className="status-row"><span>Client profile</span><strong>PM companies + portfolio landlords</strong></div>
+            <div className="status-row"><span>Tenant clients</span><strong>0</strong></div>
+            <div className="status-row"><span>Pricing system</span><strong>Flat-fee model</strong></div>
+            <div className="status-row"><span>Coverage</span><strong>Clark County + Puget Sound</strong></div>
+          </div>
+        </div>
+      </section>
+      <MetricStrip />
+      <HowItWorks />
+      <ServicesOverview />
+      <section className="section-pad">
+        <div className="container">
+          <SectionHeader kicker="Why NW Landlord Solutions" title="Legal process infrastructure for property managers that measure time, cost, and status." text="The firm is structured around repeatable landlord-side workflows, not broad consumer legal services." />
+          <div className="why-grid">
+            {why.map((item) => (
+              <article className="why-card" key={item.title}>
+                <item.icon size={28} />
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <CheckCircle2 className="check-mark" size={18} />
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <PortalCTA />
+    </>
   );
 }
