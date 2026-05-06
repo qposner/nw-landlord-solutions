@@ -17,10 +17,10 @@ export function SectionHeader({ kicker, title, text }: { kicker: string; title: 
 
 export function MetricStrip() {
   const metrics = [
-    ["23 years", "Clark County practice"],
-    ["0 tenant clients", "Exclusive landlord-side position"],
+    ["Since 2001", "Clark County practice"],
+    ["Since 2013", "Landlord-side only"],
     ["Flat-fee model", "Predictable matter economics"],
-    ["WA coverage", "Clark County + Puget Sound"],
+    ["Coverage", "Pacific Northwest"],
   ];
   return (
     <section className="container -mt-8 relative z-20">

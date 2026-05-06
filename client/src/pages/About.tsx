@@ -7,8 +7,8 @@ Design philosophy reminder: Swiss International Typographic Style translated int
 */
 export default function About() {
   const facts = [
-    { icon: MapPinned, title: "23 years", text: "Clark County practice context informs procedural expectations and local court-stage operations." },
-    { icon: Building2, title: "Since 2013", text: "Exclusive landlord-side representation posture for eviction and unlawful detainer matters." },
+    { icon: MapPinned, title: "Since 2001", text: "Clark County practice context informs procedural expectations and local court-stage operations." },
+    { icon: Building2, title: "Since 2013", text: "Landlord-only representation posture for eviction and unlawful detainer matters." },
     { icon: UsersRound, title: "WMFHA", text: "Government Affairs Committee participation connects practice perspective with housing policy context." },
     { icon: Scale, title: "Focused scope", text: "The firm does not dilute its position with tenant-side representation or broad consumer legal service messaging." },
   ];
@@ -31,7 +31,7 @@ export default function About() {
             </figure>
             <div className="section-copy-stack">
               <p>NW Landlord Solutions serves clients who need eviction representation to integrate with property management operations. The practice model prioritizes file readiness, status clarity, and predictable engagement structure.</p>
-              <p>Quinn Posner has practiced in Clark County for 23 years and has represented landlord-side clients exclusively since 2013. The firm’s involvement with the WMFHA Government Affairs Committee reflects a policy-aware view of Washington housing procedure.</p>
+              <p>Quinn Posner has practiced in Clark County since 2001 and has represented landlord clients only since 2013. The firm’s involvement with the WMFHA Government Affairs Committee reflects a policy-aware view of Washington housing procedure.</p>
             </div>
           </div>
         </div>
