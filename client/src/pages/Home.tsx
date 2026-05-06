@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, CheckCircle2, Cpu, Gauge, Network } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Cpu, Gauge, Network } from "lucide-react";
 import { Link } from "wouter";
 import { assets, portalUrl } from "@/lib/siteData";
 import { HowItWorks, MetricStrip, PortalCTA, ServicesOverview, SectionHeader } from "@/components/SharedSections";
@@ -24,7 +24,6 @@ export default function Home() {
             <p>NW Landlord Solutions serves professional property management companies and portfolio landlords across the Pacific Northwest with efficient, landlord-side eviction process management.</p>
             <div className="hero-actions">
               <a className="portal-button portal-button-large" href={portalUrl} target="_blank" rel="noreferrer">Start an Eviction <ArrowUpRight size={18} /></a>
-              <a className="secondary-button" href={portalUrl} target="_blank" rel="noreferrer">Client Portal <ArrowRight size={18} /></a>
             </div>
           </div>
           <div className="hero-panel" aria-label="Operational summary">
