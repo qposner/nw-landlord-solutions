@@ -19,7 +19,7 @@ export default function Home() {
         <div className="hero-bg" style={{ backgroundImage: "linear-gradient(90deg, rgba(10,15,30,1) 0%, rgba(10,15,30,.88) 38%, rgba(10,15,30,.28) 100%), url(" + assets.hero + ")" }} />
         <div className="container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Washington landlord-side eviction infrastructure</p>
+            <p className="eyebrow">Pacific Northwest landlord-side eviction infrastructure</p>
             <h1>Exclusive landlord representation, delivered like a legal technology product.</h1>
             <p>NW Landlord Solutions serves professional property management companies and portfolio landlords across the Pacific Northwest with efficient, landlord-side eviction process management.</p>
             <div className="hero-actions">

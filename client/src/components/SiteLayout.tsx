@@ -1,16 +1,18 @@
 import { Link, useLocation } from "wouter";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
-import { contact, navItems, portalUrl } from "@/lib/siteData";
+import { assets, contact, navItems, portalUrl } from "@/lib/siteData";
 
 /*
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. This layout keeps navigation stable, sharp, and product-like with a persistent glowing Client Portal action.
 */
 function LogoMark() {
   return (
-    <Link href="/" className="brand-mark" aria-label="NW Landlord Solutions home">
-      <span className="brand-glyph">NW</span>
-      <span>NW Landlord Solutions</span>
+    <Link href="/" className="brand-mark brand-mark-logo" aria-label="NW Landlord Solutions home">
+      <span className="brand-logo-plate">
+        <img src={assets.logo} alt="NW Landlord Solutions" />
+      </span>
+      <span className="brand-text-fallback">NW Landlord Solutions</span>
     </Link>
   );
 }
@@ -71,7 +73,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
         <div className="container grid gap-10 py-12 lg:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <LogoMark />
-            <p className="mt-5 max-w-md text-sm leading-6 text-slate-400">Landlord-side Washington eviction representation structured for property management companies and portfolio operators.</p>
+            <p className="mt-5 max-w-md text-sm leading-6 text-slate-400">Landlord-side Pacific Northwest eviction representation structured for property management companies and portfolio operators.</p>
           </div>
           <div>
             <p className="eyebrow">Office</p>
