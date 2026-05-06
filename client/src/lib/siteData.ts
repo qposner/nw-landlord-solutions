@@ -6,7 +6,7 @@ export const assets = {
   process: "https://d2xsxph8kpxj0f.cloudfront.net/310519663634024411/EEgHWt2GYcdttMiMvAp3Dc/nwls-process-rail-C8RD6UySMntYUGvqhoEWka.webp",
   portal: "https://d2xsxph8kpxj0f.cloudfront.net/310519663634024411/EEgHWt2GYcdttMiMvAp3Dc/nwls-portal-glow-Va6gqjkoP3A2fJpnG5V9c7.webp",
   headshot: "/manus-storage/nwls-quinn-posner-headshot_31eeb49b.png",
-  logo: "/manus-storage/nwls-logo-rgb_7eb72de5.webp",
+  logo: "/manus-storage/nwls-logo-transparent_b86d5fdd.png",
 };
 
 export const contact = {

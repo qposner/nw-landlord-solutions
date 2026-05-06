@@ -1,7 +1,6 @@
 # TODO
 
-- [x] Update the homepage eyebrow from Washington landlord-side eviction infrastructure to Pacific Northwest landlord-side eviction infrastructure.
-- [x] Wait for the user-provided logo file before integrating it into the website.
-- [x] Preserve the original logo colors unless a proposed color adjustment is shown to and approved by the user.
-- [x] Integrate the logo into appropriate brand locations after upload.
+- [x] Create a transparent-background logo asset from the provided original logo while preserving the original blue and navy logo colors.
+- [x] Replace the current white logo box in the header and footer with the transparent logo presentation.
+- [x] Remove white plate styling around the brand logo and tune spacing for the dark header.
 - [x] Validate the updated site and save a new checkpoint.
