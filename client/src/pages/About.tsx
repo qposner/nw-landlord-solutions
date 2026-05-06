@@ -1,5 +1,6 @@
 import { Building2, MapPinned, Scale, UsersRound } from "lucide-react";
 import { PageHero } from "@/components/SharedSections";
+import { assets } from "@/lib/siteData";
 
 /*
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. The About page embeds philosophy through proof points and operating principles, not biography-first storytelling.
@@ -20,9 +21,18 @@ export default function About() {
             <p className="eyebrow">Operating philosophy</p>
             <h2 className="large-section-title">The firm is built for specialization, not general-market positioning.</h2>
           </div>
-          <div className="section-copy-stack">
-            <p>NW Landlord Solutions serves clients who need eviction representation to integrate with property management operations. The practice model prioritizes file readiness, status clarity, and predictable engagement structure.</p>
-            <p>Quinn Posner has practiced in Clark County for 23 years and has represented landlord-side clients exclusively since 2013. The firm’s involvement with the WMFHA Government Affairs Committee reflects a policy-aware view of Washington housing procedure.</p>
+          <div className="about-profile-grid">
+            <figure className="headshot-card">
+              <img src={assets.headshot} alt="Quinn Posner, NW Landlord Solutions" />
+              <figcaption>
+                <span>Quinn Posner</span>
+                <strong>Landlord-side eviction counsel</strong>
+              </figcaption>
+            </figure>
+            <div className="section-copy-stack">
+              <p>NW Landlord Solutions serves clients who need eviction representation to integrate with property management operations. The practice model prioritizes file readiness, status clarity, and predictable engagement structure.</p>
+              <p>Quinn Posner has practiced in Clark County for 23 years and has represented landlord-side clients exclusively since 2013. The firm’s involvement with the WMFHA Government Affairs Committee reflects a policy-aware view of Washington housing procedure.</p>
+            </div>
           </div>
         </div>
       </section>
