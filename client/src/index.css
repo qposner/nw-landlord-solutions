@@ -135,6 +135,7 @@ Design philosophy reminder: Swiss International Typographic Style translated int
   .service-card, .why-card, .impact-card, .proof-card, .blog-card { padding: 1.35rem; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
   .service-card:hover, .why-card:hover, .impact-card:hover, .proof-card:hover, .blog-card:hover { transform: translateY(-3px); border-color: rgba(37,99,235,.55); background: linear-gradient(180deg, rgba(37,99,235,.12), rgba(255,255,255,.035)); }
   .service-card-tall { min-height: 260px; }
+  .service-card-tall .card-label { min-height: 2.35rem; display: flex; align-items: flex-start; }
   .card-link { margin-top: 1rem; display: inline-flex; align-items: center; gap: .45rem; color: #93c5fd; font-weight: 700; font-size: .9rem; }
   .blog-grid { grid-template-columns: repeat(3, 1fr); }
   .why-grid { grid-template-columns: repeat(4, 1fr); }
