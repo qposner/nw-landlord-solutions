@@ -62,11 +62,10 @@ export default function Platform() {
               </div>
             ))}
           </div>
-          <div className="dashboard-placeholder dashboard-placeholder-wide" aria-label="Dashboard screenshot placeholder">
-            <p className="card-label">[INSERT: Dashboard screenshot]</p>
-            <h2>Portal workflow view.</h2>
-            <p>Simple case status, hearing notifications, document access, final orders, lockout scheduling updates, and archived matter history.</p>
-          </div>
+          <figure className="portal-screenshot-card portal-screenshot-wide">
+            <img src="/manus-storage/portal-case-detail-cropped_14229f94.png" alt="NW Landlord Solutions client portal case detail progress tracker and notice information" />
+            <figcaption>Every milestone tracked. Every document accessible. No phone call required.</figcaption>
+          </figure>
         </div>
       </section>
       <section className="section-pad">

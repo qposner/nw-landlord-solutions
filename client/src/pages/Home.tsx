@@ -33,11 +33,10 @@ export default function Home() {
               <a className="portal-button portal-button-large" href={portalUrl} target="_blank" rel="noreferrer">Start an Eviction <ArrowUpRight size={18} /></a>
             </div>
           </div>
-          <div className="dashboard-placeholder dashboard-placeholder-hero" aria-label="Dashboard screenshot placeholder">
-            <p className="card-label">[INSERT: Dashboard screenshot]</p>
-            <h2>Simple case status and document access.</h2>
-            <p>An easy-to-use portal. From intake to reporting, every step has a defined purpose.</p>
-          </div>
+          <figure className="portal-screenshot-card portal-screenshot-hero">
+            <img src="/manus-storage/portal-dashboard-list-cropped_7f26efaa.png" alt="NW Landlord Solutions client portal dashboard list view" />
+            <figcaption>Your entire caseload. Status-visible, document-ready, accessible any time.</figcaption>
+          </figure>
         </div>
       </section>
       <section className="problem-solution-section">
