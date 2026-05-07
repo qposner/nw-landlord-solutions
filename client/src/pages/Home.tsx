@@ -27,7 +27,7 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Washington State landlord-side eviction infrastructure</p>
-            <h1>Eviction workflow for property managers.</h1>
+            <h1>Unpredictable legal work slows everything.</h1>
             <p>NW Landlord Solutions provides exclusively landlord-side representation for Washington State property management companies and portfolio landlords, delivered through clear workflows, flat-fee structure, and client portal access.</p>
             <div className="hero-actions">
               <a className="portal-button portal-button-large" href={portalUrl} target="_blank" rel="noreferrer">Start an Eviction <ArrowUpRight size={18} /></a>
