@@ -172,14 +172,16 @@ Design philosophy reminder: Swiss International Typographic Style translated int
   .headshot-card figcaption span { font-family: "Space Grotesk"; color: white; font-size: 1.3rem; font-weight: 700; letter-spacing: -.04em; }
   .headshot-card figcaption strong { font-family: "IBM Plex Mono"; color: #93c5fd; font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; }
   .about-headshot-card { width: min(100%, 360px); }
-  .credential-card { width: min(100%, 520px); border: 1px solid rgba(96,165,250,.26); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025)); padding: 1.25rem; box-shadow: 0 20px 70px rgba(0,0,0,.24); text-align: center; }
+  .credential-card { width: min(100%, 520px); border: 1px solid rgba(96,165,250,.18); background: rgba(255,255,255,.025); padding: 1.25rem 1.35rem; box-shadow: 0 18px 60px rgba(0,0,0,.18); text-align: left; }
   .credential-card p { margin: 0; color: #e2e8f0; line-height: 1.55; }
-  .credential-lead { font-family: "Space Grotesk"; font-weight: 700; font-size: 1.08rem; letter-spacing: -.035em; color: white !important; margin-bottom: .7rem !important; }
-  .credential-line { font-family: "IBM Plex Sans"; font-size: .95rem; }
+  .credential-card-clean { display: grid; gap: .85rem; }
+  .credential-lead { font-family: "Space Grotesk"; font-weight: 700; font-size: 1.05rem; letter-spacing: -.035em; color: white !important; padding-bottom: .75rem; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .credential-list { display: grid; gap: .35rem; }
+  .credential-line { font-family: "IBM Plex Sans"; font-size: .92rem; }
   .about-copy-panel { max-width: 760px; }
-  .mission-copy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.35rem; }
-  .mission-copy-grid p { margin: 0; padding: 1.1rem; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.035); color: #e2e8f0; line-height: 1.65; }
-  .mission-copy-grid p:last-child { grid-column: 1 / -1; }
+  .about-copy-clean { max-width: 780px; }
+  .founder-story-prose { margin-top: 1.45rem; display: grid; gap: 1rem; }
+  .founder-story-prose p { margin: 0; color: #e2e8f0; font-size: 1.08rem; line-height: 1.78; }
   .philosophy-panel { padding: clamp(1.5rem, 5vw, 3rem); max-width: 980px; }
   .filter-bar { display: flex; flex-wrap: wrap; gap: .7rem; margin-bottom: 2rem; }
   .filter-chip { border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.035); color: #e2e8f0; padding: .7rem .95rem; font-family: "IBM Plex Mono"; font-size: .78rem; transition: .2s ease; }
@@ -224,7 +226,6 @@ Design philosophy reminder: Swiss International Typographic Style translated int
     .portal-cta, .pricing-cta { align-items: flex-start; flex-direction: column; }
     .process-image, .platform-visual, .page-hero-art, .dashboard-placeholder { min-height: 240px; }
     .blog-thumb { height: 170px; }
-    .mission-copy-grid p:last-child { grid-column: auto; }
     .credential-card { text-align: left; }
     .hero-actions { flex-direction: column; align-items: stretch; }
     .brand-logo-plate { width: 184px; height: 44px; padding: 0; }
