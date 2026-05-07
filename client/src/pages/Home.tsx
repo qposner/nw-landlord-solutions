@@ -14,10 +14,10 @@ export default function Home() {
   ];
 
   const problemSolutions = [
-    { problem: "Status updates take too much time.", solution: "The portal gives teams a central place to see case status and documents." },
-    { problem: "Legal invoices are hard to forecast.", solution: "Flat-fee workflows make billing more predictable before work begins." },
-    { problem: "Files arrive with missing information.", solution: "Structured intake identifies documents and facts needed for the next step." },
-    { problem: "Eviction files create too many handoffs.", solution: "Defined workflows move matters from intake to reporting with fewer loose ends." },
+    { problem: "Unpredictable legal costs derail your budget", solution: "NW Landlord Solutions operates on a flat-fee model covering every stage of the unlawful detainer process, so your costs are known before the matter opens." },
+    { problem: "You need case status without calling your attorney", solution: "The client portal gives your team real-time visibility into every active matter, document, and milestone — day or night." },
+    { problem: "Eviction delays create vacancy drag and revenue loss", solution: "The firm runs on defined workflows and structured intake, moving cases forward without the bottlenecks of a traditional practice." },
+    { problem: "Your legal vendor doesn't understand property management operations", solution: "NW Landlord Solutions represents landlords only and is built around the operational realities of professional property management companies." },
   ];
 
   return (
@@ -40,7 +40,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <MetricStrip />
       <section className="problem-solution-section">
         <div className="container problem-solution-grid">
           {problemSolutions.map((item) => (
@@ -51,6 +50,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <MetricStrip />
       <HowItWorks />
       <ServicesOverview />
       <section className="section-pad">

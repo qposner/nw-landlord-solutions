@@ -23,7 +23,7 @@ export function MetricStrip() {
     ["Coverage", "Washington State"],
   ];
   return (
-    <section className="container -mt-8 relative z-20">
+    <section className="container relative z-20">
       <div className="metrics-strip">
         {metrics.map(([value, label]) => (
           <div className="metric-cell" key={value}>
