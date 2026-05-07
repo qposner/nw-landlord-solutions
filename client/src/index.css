@@ -128,7 +128,7 @@ Design philosophy reminder: Swiss International Typographic Style translated int
   .process-card p, .service-card p, .why-card p, .impact-card p, .proof-card p, .blog-card p { margin-top: .75rem; color: #e2e8f0; line-height: 1.65; }
   .service-grid, .why-grid, .impact-grid, .proof-grid, .blog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
   .problem-solution-section { padding: clamp(3rem, 6vw, 5rem) 0 0; }
-  .problem-solution-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .problem-solution-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
   .problem-card { border: 1px solid rgba(255,255,255,.11); background: rgba(255,255,255,.04); padding: 1.25rem; min-height: 190px; }
   .problem-card p { color: #e2e8f0; font-family: "IBM Plex Mono"; text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; line-height: 1.55; }
   .problem-card h3 { margin-top: 1rem; color: white; font-size: 1.25rem; line-height: 1.2; letter-spacing: -.035em; }
