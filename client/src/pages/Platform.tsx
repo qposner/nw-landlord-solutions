@@ -41,7 +41,7 @@ export default function Platform() {
         <div className="container platform-sequence">
           <article className="sequence-card problem">
             <p className="eyebrow">Problem</p>
-            <h2>Eviction files create operational drag when legal work is treated as ad hoc correspondence.</h2>
+            <h2>Eviction files create operational drag when legal work is handled through one-off emails and unclear updates.</h2>
             <p>Property managers need predictable matter routing, disciplined documentation, and a direct view into case progression. Traditional hourly communication models create fragmented status tracking and budgeting friction.</p>
           </article>
           <article className="sequence-card solution">
