@@ -30,11 +30,10 @@ export default function Platform() {
             <h1>A legal operations layer for Washington eviction volume.</h1>
             <p>NW Landlord Solutions presents eviction representation as a managed workflow: intake, procedural execution, court-stage coordination, and status visibility for property management companies.</p>
           </div>
-          <div className="dashboard-placeholder dashboard-placeholder-page" aria-label="Dashboard screenshot placeholder">
-            <p className="card-label">[INSERT: Dashboard screenshot]</p>
-            <h2>Case status and document access.</h2>
-            <p>A simple, clean interface showing case status, hearing dates, document uploads, and final order access.</p>
-          </div>
+          <figure className="portal-screenshot-card portal-screenshot-page">
+            <img src="/manus-storage/portal-dashboard-list-cropped_7f26efaa.png" alt="NW Landlord Solutions client portal dashboard list view" />
+            <figcaption>Your entire caseload. Status-visible, document-ready, accessible any time.</figcaption>
+          </figure>
         </div>
       </section>
       <section className="section-pad">
