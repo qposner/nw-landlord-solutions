@@ -21,7 +21,10 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
   const [location] = useLocation();
   const [open, setOpen] = useState(false);
 
-  useEffect(() => setOpen(false), [location]);
+  useEffect(() => {
+    setOpen(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location]);
 
   return (
     <div className="min-h-screen bg-[#0a0f1e] text-white selection:bg-blue-500/30 selection:text-white">
@@ -73,7 +76,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
         <div className="container grid gap-10 py-12 lg:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <LogoMark />
-            <p className="mt-5 max-w-md text-sm leading-6 text-slate-400">Landlord-side Pacific Northwest eviction representation structured for property management companies and portfolio operators.</p>
+            <p className="mt-5 max-w-md text-sm leading-6 text-slate-400">Landlord-side Washington State eviction representation structured for property management companies and portfolio operators.</p>
           </div>
           <div>
             <p className="eyebrow">Office</p>

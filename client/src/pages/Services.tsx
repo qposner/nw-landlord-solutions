@@ -33,7 +33,7 @@ export default function Services() {
       </section>
       <section className="section-pad">
         <div className="container">
-          <SectionHeader kicker="Service areas" title="Specialized landlord-side coverage." text="The firm does not position itself as a general consumer practice. Work is focused on the procedural needs of landlords, property managers, and portfolio operators." />
+          <SectionHeader kicker="Service areas" title="Focused landlord-side coverage." text="The firm does not position itself as a general consumer practice. Work is focused on the procedural needs of landlords, property managers, and portfolio operators." />
           <div className="service-grid">
             {serviceAreas.map((service) => (
               <article className="service-card service-card-tall" key={service.title}>

@@ -20,7 +20,7 @@ export function MetricStrip() {
     ["Since 2001", "Clark County practice"],
     ["Since 2013", "Landlord-side only"],
     ["Flat-fee model", "Predictable matter economics"],
-    ["Coverage", "Pacific Northwest"],
+    ["Coverage", "Washington State"],
   ];
   return (
     <section className="container -mt-8 relative z-20">

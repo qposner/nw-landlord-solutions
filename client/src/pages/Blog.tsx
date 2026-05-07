@@ -24,6 +24,7 @@ export default function Blog() {
           <div className="blog-grid">
             {posts.map((post) => (
               <article className="blog-card" key={post.title}>
+                <div className="blog-thumb"><span>[INSERT: Cover image]</span></div>
                 <div className="blog-meta"><span>{post.category}</span><span>{post.read}</span></div>
                 <h2>{post.title}</h2>
                 <p>{post.excerpt}</p>
