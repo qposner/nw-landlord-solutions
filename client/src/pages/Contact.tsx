@@ -11,7 +11,7 @@ export default function Contact() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    fetch('https://formspree.io/f/mqenypen', {
+    fetch('https://formspree.io/f/mojrkeda', {
       method: 'POST',
       body: formData,
       headers: {
