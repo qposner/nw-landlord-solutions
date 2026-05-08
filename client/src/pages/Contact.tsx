@@ -10,7 +10,20 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    const formData = new FormData(event.currentTarget);
+    fetch('https://formspree.io/f/xeenrejg', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          setSubmitted(true);
+        }
+      })
+      .catch(error => console.error('Form submission error:', error));
   }
 
   return (
@@ -27,7 +40,7 @@ export default function Contact() {
             </div>
             <label>Message<textarea required name="message" rows={7} /></label>
             <button className="portal-button portal-button-large" type="submit">Submit intake request</button>
-            {submitted && <p className="form-success"><CheckCircle2 size={18} /> Request captured in this preview. Connect a form endpoint before production use.</p>}
+            {submitted && <p className="form-success"><CheckCircle2 size={18} /> Your intake request has been sent. We'll review and follow up within one business day.</p>}
           </form>
           <aside className="contact-card">
             <p className="eyebrow">Office</p>
