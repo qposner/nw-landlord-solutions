@@ -49,6 +49,15 @@ export const serviceAreas = [
 
 export const blogPosts = [
   {
+    title: "City-Specific Ordinance Landmines: Seattle, Tacoma, and Beyond",
+    category: "Jurisdiction",
+    excerpt: "This article maps out the city-specific ordinance overlays that go well beyond Washington state law. Seattle, Tacoma, and Vancouver each have requirements that differ significantly from RCW 59.18. Getting them wrong can kill an eviction case or trigger significant penalties. Written for landlords and property managers operating across multiple Washington cities.",
+    date: "May 11, 2026",
+    read: "8 min",
+    url: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7459632380937543681/",
+    image: "/manus-storage/city_ordinance_landmines_cover_de155849.webp",
+  },
+  {
     title: "Submit an Eviction at 9 PM. We'll Have It Open by Morning.",
     category: "Technology",
     excerpt: "This article explains how a system-driven intake process reduces the delay between a property manager submitting an eviction and the firm opening the file. It covers master fee agreements, self-service portal intake, same-business-day matter opening, and document access for active cases.",
