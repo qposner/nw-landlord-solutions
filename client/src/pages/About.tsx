@@ -1,11 +1,14 @@
 import { Building2, MapPinned, Scale, UsersRound } from "lucide-react";
 import { PageHero } from "@/components/SharedSections";
 import { assets } from "@/lib/siteData";
+import { useSEO } from "@/hooks/useSEO";
+import { seoData } from "@/lib/seoData";
 
 /*
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. The About page should feel mission-forward, professional, and clean rather than boxed or biography-heavy.
 */
 export default function About() {
+  useSEO(seoData.about);
   const facts = [
     { icon: MapPinned, title: "Since 2001", text: "Clark County practice context informs procedural expectations and local court-stage operations." },
     { icon: Building2, title: "Since 2013", text: "Landlord-only representation posture for eviction and unlawful detainer matters." },

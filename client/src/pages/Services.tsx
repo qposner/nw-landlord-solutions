@@ -2,11 +2,14 @@ import { ArrowRight, Check } from "lucide-react";
 import { Link } from "wouter";
 import { serviceAreas } from "@/lib/siteData";
 import { PageHero, SectionHeader } from "@/components/SharedSections";
+import { useSEO } from "@/hooks/useSEO";
+import { seoData } from "@/lib/seoData";
 
 /*
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. The Services page communicates flat-fee predictability without listing specific prices.
 */
 export default function Services() {
+  useSEO(seoData.services);
   const model = [
     "Flat-fee structure for predictable matter economics",
     "Coverage across the unlawful detainer process from notice through trial",

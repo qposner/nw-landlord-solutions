@@ -2,11 +2,14 @@ import { useMemo, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { blogPosts } from "@/lib/siteData";
 import { PageHero } from "@/components/SharedSections";
+import { useSEO } from "@/hooks/useSEO";
+import { seoData } from "@/lib/seoData";
 
 /*
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. Blog cards are an index of operational legal topics without sidebars or editorial clutter.
 */
 export default function Blog() {
+  useSEO(seoData.blog);
   const categories = ["All", ...Array.from(new Set(blogPosts.map((post) => post.category)))];
   const [active, setActive] = useState("All");
   const posts = useMemo(() => active === "All" ? blogPosts : blogPosts.filter((post) => post.category === active), [active]);

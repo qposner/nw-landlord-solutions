@@ -1,11 +1,17 @@
 import { ArrowUpRight, CheckCircle2, Cpu, Gauge, Network, ReceiptText } from "lucide-react";
 import { portalUrl } from "@/lib/siteData";
 import { HowItWorks, MetricStrip, PortalCTA, ServicesOverview, SectionHeader } from "@/components/SharedSections";
+import { useSEO } from "@/hooks/useSEO";
+import { seoData, getOrganizationSchema } from "@/lib/seoData";
 
 /*
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. The home page should establish landlord-side exclusivity, legal-tech differentiation, and operational credibility immediately.
 */
 export default function Home() {
+  useSEO({
+    ...seoData.home,
+    schema: getOrganizationSchema(),
+  });
   const why = [
     { icon: Cpu, title: "Technology-first matter visibility", text: "Portal access, structured intake, and standardized status language reduce internal friction for management teams." },
     { icon: Gauge, title: "Built for turnaround discipline", text: "The process model prioritizes complete files, clean sequencing, and rapid movement through known procedural stages." },

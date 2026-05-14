@@ -1,11 +1,14 @@
 import { ArrowUpRight, BarChart3, Clock3, FileCheck2, Layers3 } from "lucide-react";
 import { portalUrl } from "@/lib/siteData";
 import { PortalCTA, SectionHeader } from "@/components/SharedSections";
+import { useSEO } from "@/hooks/useSEO";
+import { seoData } from "@/lib/seoData";
 
 /*
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. The Platform page should read like a product page with problem, solution, workflow, and efficiency impact.
 */
 export default function Platform() {
+  useSEO(seoData.platform);
   const workflow = [
     "Client submits eviction intake through the portal",
     "Firm reviews notice, generates pleadings, and files",

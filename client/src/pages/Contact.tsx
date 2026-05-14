@@ -2,11 +2,14 @@ import { FormEvent, useState } from "react";
 import { CheckCircle2, MapPin, Phone } from "lucide-react";
 import { contact } from "@/lib/siteData";
 import { PageHero } from "@/components/SharedSections";
+import { useSEO } from "@/hooks/useSEO";
+import { seoData } from "@/lib/seoData";
 
 /*
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. The Contact page uses a structured intake form and no live chat or chatbot pattern.
 */
 export default function Contact() {
+  useSEO(seoData.contact);
   const [submitted, setSubmitted] = useState(false);
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
