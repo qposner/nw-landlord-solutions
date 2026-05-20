@@ -146,7 +146,7 @@ Design philosophy reminder: Swiss International Typographic Style translated int
   .impact-grid, .proof-grid { grid-template-columns: repeat(2, 1fr); }
   .why-card svg, .impact-card svg, .proof-card svg { color: #60a5fa; }
   .check-mark { margin-top: 1.25rem; }
-  .portal-cta { min-height: 430px; display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: clamp(1.5rem, 5vw, 3rem); background-size: cover; background-position: center; border: 1px solid rgba(96,165,250,.3); box-shadow: 0 0 70px rgba(37,99,235,.2); }
+  .portal-cta { min-height: 430px; display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: clamp(1.5rem, 5vw, 3rem); background-size: cover; background-position: center; border: 1px solid rgba(96,165,250,.3); box-shadow: 0 0 70px rgba(37,99,235,.2); background-blend-mode: overlay; }
   .page-hero { padding: clamp(5rem, 10vw, 9rem) 0 clamp(3rem, 7vw, 6rem); border-bottom: 1px solid rgba(255,255,255,.1); overflow: hidden; }
   .page-hero-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(280px, .8fr); align-items: center; gap: 3rem; }
   .page-hero h1 { margin-top: 1.2rem; color: white; font-size: clamp(2.8rem, 6.3vw, 5.6rem); line-height: .94; overflow-wrap: anywhere; }
