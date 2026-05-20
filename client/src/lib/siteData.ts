@@ -5,6 +5,7 @@ export const assets = {
   platform: "https://d2xsxph8kpxj0f.cloudfront.net/310519663634024411/EEgHWt2GYcdttMiMvAp3Dc/nwls-platform-interface-j4cWg7XygdMeUTNSmHGwbz.webp",
   process: "https://d2xsxph8kpxj0f.cloudfront.net/310519663634024411/EEgHWt2GYcdttMiMvAp3Dc/nwls-process-rail-C8RD6UySMntYUGvqhoEWka.webp",
   portal: "/manus-storage/Screenshot2026-05-20at2.05.45PM_5beffaf1.webp",
+  portalSmall: "/manus-storage/page-000_16fd73f0.png",
   dashboard: "/manus-storage/page-000_16fd73f0.png",
   headshot: "/manus-storage/nwls-quinn-posner-headshot_31eeb49b.png",
   logo: "/manus-storage/nwls-logo-transparent_b86d5fdd.png",
