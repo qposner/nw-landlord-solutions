@@ -40,7 +40,7 @@ export default function Home() {
             </div>
           </div>
           <figure className="portal-screenshot-card portal-screenshot-hero">
-            <img src="/manus-storage/portal-dashboard-list-cropped_7f26efaa.png" alt="NW Landlord Solutions client portal dashboard list view" />
+            <img src="/manus-storage/steve-000_322b111b.png" alt="NW Landlord Solutions client portal dashboard list view" />
             <figcaption>Your entire caseload. Status-visible, document-ready, accessible any time.</figcaption>
           </figure>
         </div>
