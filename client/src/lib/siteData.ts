@@ -51,6 +51,15 @@ export const serviceAreas = [
 
 export const blogPosts = [
   {
+    title: "Right to Counsel: What Landlords Need to Know About Opposing Funded Attorneys",
+    category: "Jurisdiction",
+    excerpt: "This article explains how Washington's Right to Counsel program works, who qualifies for representation, what it means for your timeline, and how to adjust your case strategy when opposing a funded defense attorney. It covers the practical realities of eviction practice under RCW 59.18.640.",
+    date: "May 18, 2026",
+    read: "10 min",
+    url: "https://www.linkedin.com/pulse/right-counsel-what-landlords-need-know-opposing-funded-quinn-posner-vpiic/",
+    image: "/manus-storage/right_to_counsel_cover_cf97e8f3.webp",
+  },
+  {
     title: "City-Specific Ordinance Landmines: Seattle, Tacoma, and Beyond",
     category: "Jurisdiction",
     excerpt: "This article maps out the city-specific ordinance overlays that go well beyond Washington state law. Seattle, Tacoma, and Vancouver each have requirements that differ significantly from RCW 59.18. Getting them wrong can kill an eviction case or trigger significant penalties. Written for landlords and property managers operating across multiple Washington cities.",
