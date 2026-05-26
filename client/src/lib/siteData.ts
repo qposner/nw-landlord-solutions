@@ -51,6 +51,15 @@ export const serviceAreas = [
 
 export const blogPosts = [
   {
+    title: "The 14-Day Pay or Vacate Notice: A Compliance Checklist Before the Rules Change Again",
+    category: "Process",
+    excerpt: "This article is a working compliance checklist for Washington's 14-day pay or vacate notice. It covers every element the notice must contain under RCW 59.18.057, current service rules, what changes on June 11 with HB 2664, and the most common errors that get nonpayment cases dismissed.",
+    date: "May 26, 2026",
+    read: "11 min",
+    url: "https://www.linkedin.com/pulse/14-day-pay-vacate-notice-compliance-checklist-before-rules-posner-dlfvc/",
+    image: "/manus-storage/14_day_pay_vacate_cover_bd15e7ac.webp",
+  },
+  {
     title: "Right to Counsel: What Landlords Need to Know About Opposing Funded Attorneys",
     category: "Jurisdiction",
     excerpt: "This article explains how Washington's Right to Counsel program works, who qualifies for representation, what it means for your timeline, and how to adjust your case strategy when opposing a funded defense attorney. It covers the practical realities of eviction practice under RCW 59.18.640.",
