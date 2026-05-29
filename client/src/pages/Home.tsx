@@ -8,6 +8,10 @@ import { seoData, getOrganizationSchema } from "@/lib/seoData";
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. The home page should establish landlord-side exclusivity, legal-tech differentiation, and operational credibility immediately.
 */
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   useSEO({
     ...seoData.home,
     schema: getOrganizationSchema(),

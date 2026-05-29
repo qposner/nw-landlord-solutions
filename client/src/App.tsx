@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. Use deep navy surfaces, electric-blue operational signals, sharp geometry, asymmetric layouts, and direct institutional language.
 */
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <SiteLayout>
       <Switch>
