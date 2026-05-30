@@ -37,6 +37,12 @@ export const seoData = {
     ogDescription: "Contact NW Landlord Solutions for eviction representation and consultation.",
     canonical: "https://waevictions.com/contact",
   },
+  serviceAreas: {
+    title: "Service Areas | NW Landlord Solutions - Washington, Oregon, Arizona",
+    description: "Currently serving Washington with full-service eviction management. Oregon expansion scheduled for late 2026. Arizona under consideration for future expansion.",
+    ogDescription: "Expansion roadmap: Washington (active), Oregon (coming 2026), Arizona (under consideration).",
+    canonical: "https://waevictions.com/service-areas",
+  },
 };
 
 export function getOrganizationSchema() {

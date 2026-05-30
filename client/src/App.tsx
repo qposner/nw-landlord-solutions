@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
+import ServiceAreas from "./pages/ServiceAreas";
 
 /*
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. Use deep navy surfaces, electric-blue operational signals, sharp geometry, asymmetric layouts, and direct institutional language.
@@ -28,6 +29,7 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/contact" component={Contact} />
+        <Route path="/service-areas" component={ServiceAreas} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

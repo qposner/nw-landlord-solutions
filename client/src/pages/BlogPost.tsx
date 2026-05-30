@@ -15,16 +15,16 @@ export default function BlogPost() {
   );
 
   // Set SEO metadata for the blog post
-  if (post) {
-    useSEO({
+  useSEO(
+    post ? {
       title: post.title,
       description: post.excerpt,
       canonical: `/blog/${post.slug}`,
       ogImage: post.imageUrl,
       type: "article",
       publishedTime: post.publishedAt,
-    });
-  }
+    } : undefined
+  );
 
   if (isLoading) {
     return (

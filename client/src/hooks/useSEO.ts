@@ -10,8 +10,9 @@ export interface SEOConfig {
   schema?: Record<string, unknown>;
 }
 
-export function useSEO(config: SEOConfig) {
+export function useSEO(config?: SEOConfig) {
   useEffect(() => {
+    if (!config) return;
     // Update page title
     document.title = config.title;
 
