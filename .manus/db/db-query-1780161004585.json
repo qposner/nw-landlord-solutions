@@ -1,0 +1,20 @@
+{
+  "query": "SELECT id, title, slug FROM blog_posts;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user cQzbaZXvQUqywky.root --database EEgHWt2GYcdttMiMvAp3Dc --execute SELECT id, title, slug FROM blog_posts;",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Test Blog Post",
+      "slug": "test-blog-post"
+    },
+    {
+      "id": "30001",
+      "title": "Oregon Eviction Services vs. DIY: Which Is Best for Property Managers?",
+      "slug": "oregon-eviction-services-vs-diy"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tslug\n1\tTest Blog Post\ttest-blog-post\n30001\tOregon Eviction Services vs. DIY: Which Is Best for Property Managers?\toregon-eviction-services-vs-diy\n",
+  "stderr": "",
+  "execution_time_ms": 258
+}
