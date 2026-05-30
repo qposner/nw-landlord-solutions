@@ -10,6 +10,7 @@ import Platform from "./pages/Platform";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 
 /*
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/services" component={Services} />
         <Route path="/about" component={About} />
         <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/contact" component={Contact} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
