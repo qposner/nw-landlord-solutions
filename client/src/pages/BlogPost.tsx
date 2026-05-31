@@ -1,5 +1,5 @@
 import { useParams, useLocation } from "wouter";
-import { ArrowLeft, Linkedin } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 import { trpc } from "@/lib/trpc";
 import { Streamdown } from "streamdown";
@@ -126,33 +126,7 @@ export default function BlogPost() {
             <Streamdown>{post.content || post.htmlContent}</Streamdown>
           </div>
 
-          {/* Social Connection section */}
-          <div className="border-t border-gray-700 pt-12 mt-12">
-            <div className="bg-gray-900 rounded-lg p-8 border border-gray-800">
-              <div className="flex items-start gap-4">
-                <Linkedin className="text-blue-600 flex-shrink-0 mt-1" size={24} />
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">
-                    Originally Featured on LinkedIn
-                  </h3>
-                  <p className="text-gray-400 mb-4">
-                    This article was originally published on LinkedIn. Join the conversation
-                    and connect with us there.
-                  </p>
-                  {post.linkedInUrl && (
-                    <a
-                      href={post.linkedInUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-                    >
-                      View on LinkedIn <Linkedin size={16} />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
+
 
           {/* Related articles or CTA */}
           <div className="border-t border-gray-700 pt-12 mt-12">
