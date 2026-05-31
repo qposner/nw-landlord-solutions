@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE blog_posts SET imageUrl = '/manus-storage/UnderstandingtheOregonEvictionProcessforLandlords_21f5a5b3.jpeg' WHERE slug = 'understanding-oregon-eviction-process';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user cQzbaZXvQUqywky.root --database EEgHWt2GYcdttMiMvAp3Dc --execute UPDATE blog_posts SET imageUrl = '/manus-storage/UnderstandingtheOregonEvictionProcessforLandlords_21f5a5b3.jpeg' WHERE slug = 'understanding-oregon-eviction-process';",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 267
+}
