@@ -1,65 +1,54 @@
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import { PageHero, SectionHeader } from "@/components/SharedSections";
 import { useSEO } from "@/hooks/useSEO";
 import { seoData } from "@/lib/seoData";
 
 /*
-Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. The Service Areas page communicates expansion roadmap with clear status indicators and operational positioning.
+Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. The Service Areas page communicates Washington as the sole active market with Oregon/Arizona as future expansion considerations.
 */
 export default function ServiceAreas() {
   useSEO(seoData.serviceAreas);
 
-  const areas = [
-    {
-      state: "Washington",
-      status: "Currently Active",
-      statusClass: "active",
-      description: "Full-service eviction management across the state of Washington. Our platform is fully integrated with Washington's specific landlord-tenant laws, providing real-time tracking and automated notice generation for property managers in Seattle, Tacoma, Spokane, Vancouver, and all other Washington municipalities.",
-      cta: "Get Started in Washington",
-      ctaHref: "/platform",
-    },
-    {
-      state: "Oregon",
-      status: "Coming Late 2026",
-      statusClass: "pending",
-      description: "We are currently building the legal and technical infrastructure to launch our services in Oregon. Due to the complexity of Oregon's tenant-friendly laws, we are taking a meticulous approach to ensure our platform is 100% compliant before we go live.",
-      cta: "Join Oregon Waitlist",
-      ctaHref: "/contact",
-    },
-    {
-      state: "Arizona",
-      status: "Under Consideration",
-      statusClass: "future",
-      description: "Arizona is currently under consideration as a possible future expansion market. While we do not have a confirmed launch date for Arizona, we are evaluating the needs of property managers in the Phoenix and Tucson areas as part of our long-term roadmap.",
-      cta: "Express Interest",
-      ctaHref: "/contact",
-    },
+  const washingtonCities = [
+    "Seattle",
+    "Tacoma",
+    "Spokane",
+    "Vancouver",
+    "Bellevue",
+    "Kent",
+    "Renton",
+    "Federal Way",
+    "Everett",
+    "Kirkland",
   ];
 
   return (
     <>
       <PageHero
         kicker="Service Areas"
-        title="Expansion roadmap for multi-state landlord representation."
-        text="Currently accepting new clients in Washington. Oregon expansion is scheduled for Late 2026. Arizona is under consideration as a possible future expansion market."
+        title="Washington State eviction services. Expansion roadmap for Oregon and Arizona."
+        text="NW Landlord Solutions currently provides full-service eviction representation exclusively in Washington State. We are evaluating expansion into Oregon (late 2026) and Arizona (future consideration)."
       />
       <section className="section-pad border-y border-white/10 bg-white/[0.025]">
         <div className="container split-grid">
           <div>
-            <p className="eyebrow">Market positioning</p>
-            <h2 className="large-section-title">Building landlord infrastructure state by state.</h2>
-            <p className="section-copy">At NW Landlord Solutions, we provide tech-enabled, flat-fee eviction services designed for the modern property manager. While our long-term vision includes multi-state support, we are currently focused on providing industry-leading service to the Washington market.</p>
+            <p className="eyebrow">Current operations</p>
+            <h2 className="large-section-title">Washington State: Fully operational statewide.</h2>
+            <p className="section-copy">NW Landlord Solutions provides tech-enabled, flat-fee eviction services to property management companies and portfolio landlords across Washington State. Our platform is fully integrated with Washington's landlord-tenant law, court systems, and procedural requirements.</p>
           </div>
           <div className="model-list">
             <div className="model-item">
-              <MapPin size={18} /> <span>Washington: Fully operational statewide</span>
+              <CheckCircle2 size={18} className="text-green-500" /> <span>All Washington counties and municipalities</span>
             </div>
             <div className="model-item">
-              <MapPin size={18} /> <span>Oregon: Active development, targeting late 2026</span>
+              <CheckCircle2 size={18} className="text-green-500" /> <span>Flat-fee eviction services</span>
             </div>
             <div className="model-item">
-              <MapPin size={18} /> <span>Arizona: Under evaluation for future expansion</span>
+              <CheckCircle2 size={18} className="text-green-500" /> <span>Client portal access</span>
+            </div>
+            <div className="model-item">
+              <CheckCircle2 size={18} className="text-green-500" /> <span>Real-time case status</span>
             </div>
           </div>
         </div>
@@ -67,50 +56,55 @@ export default function ServiceAreas() {
       <section className="section-pad">
         <div className="container">
           <SectionHeader
-            kicker="Geographic coverage"
-            title="Clear status for each market."
-            text="Each state expansion requires careful planning to ensure our platform meets the unique legal requirements and operational needs of that state's property managers."
+            kicker="Washington coverage"
+            title="Serving property managers across all Washington counties."
+            text="From Clark County to the San Juan Islands, our platform supports eviction management for property management companies operating statewide."
           />
-          <div className="service-grid">
-            {areas.map((area) => (
-              <article className="service-card service-card-tall" key={area.state}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
-                  <p className="card-label">{area.state}</p>
-                  <span
-                    style={{
-                      fontSize: "0.75rem",
-                      fontWeight: 600,
-                      padding: "0.25rem 0.75rem",
-                      borderRadius: "0.25rem",
-                      backgroundColor:
-                        area.statusClass === "active"
-                          ? "rgba(16, 185, 129, 0.2)"
-                          : area.statusClass === "pending"
-                            ? "rgba(245, 158, 11, 0.2)"
-                            : "rgba(107, 114, 128, 0.2)",
-                      color:
-                        area.statusClass === "active"
-                          ? "#10b981"
-                          : area.statusClass === "pending"
-                            ? "#f59e0b"
-                            : "#9ca3af",
-                    }}
-                  >
-                    {area.status}
-                  </span>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {washingtonCities.map((city) => (
+              <div key={city} className="p-4 border border-gray-800 rounded-lg bg-gray-900/50 hover:bg-gray-900/80 transition-colors">
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin size={16} className="text-blue-600" />
+                  <span className="font-medium">{city}</span>
                 </div>
-                <h3>{area.state} Eviction Services</h3>
-                <p>{area.description}</p>
-              </article>
+                <p className="text-xs text-gray-400">Washington</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
       <section className="section-pad border-y border-white/10 bg-white/[0.025]">
         <div className="container philosophy-panel">
-          <p className="eyebrow">Strategic approach</p>
-          <h2>Each market expansion is built on legal compliance and operational readiness.</h2>
-          <p>We do not expand into new states until we can guarantee the same level of procedural accuracy, compliance, and service quality that Washington clients have come to expect. This measured approach ensures that property managers in each state receive the same predictable, flat-fee eviction infrastructure regardless of jurisdiction.</p>
+          <p className="eyebrow">Expansion roadmap</p>
+          <h2>Building multi-state infrastructure with careful planning.</h2>
+          <p>While our current focus is delivering industry-leading service to Washington property managers, we are evaluating expansion into adjacent markets. Any expansion into Oregon or Arizona will only proceed when we can guarantee the same level of procedural accuracy, compliance, and service quality that Washington clients have come to expect.</p>
+        </div>
+      </section>
+      <section className="section-pad">
+        <div className="container">
+          <SectionHeader
+            kicker="Future markets"
+            title="Oregon and Arizona: Under evaluation."
+            text="We are exploring expansion into these states, but do not currently offer legal services or representation outside Washington."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <article className="border border-gray-800 rounded-lg p-8 bg-gray-900/50">
+              <p className="eyebrow mb-2">Oregon</p>
+              <h3 className="text-xl font-bold mb-4">Expansion planned for late 2026</h3>
+              <p className="text-gray-400 mb-4">We are currently building the legal and technical infrastructure to launch services in Oregon. Due to Oregon's distinct tenant protection framework, we are taking a meticulous approach to ensure full compliance before launch.</p>
+              <Link href="/contact" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-500 text-sm font-medium">
+                Join Oregon Waitlist <ArrowRight size={16} />
+              </Link>
+            </article>
+            <article className="border border-gray-800 rounded-lg p-8 bg-gray-900/50">
+              <p className="eyebrow mb-2">Arizona</p>
+              <h3 className="text-xl font-bold mb-4">Under consideration</h3>
+              <p className="text-gray-400 mb-4">Arizona is currently under evaluation as a possible future expansion market. We are assessing the operational and legal requirements for Phoenix and Tucson markets as part of our long-term roadmap.</p>
+              <Link href="/contact" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-500 text-sm font-medium">
+                Express Interest <ArrowRight size={16} />
+              </Link>
+            </article>
+          </div>
         </div>
       </section>
       <section className="section-pad">
