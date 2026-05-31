@@ -14,6 +14,33 @@ export default function BlogPost() {
     { enabled: !!slug }
   );
 
+  // Fetch all blog posts for related articles
+  const { data: allPosts = [] } = trpc.blog.getAll.useQuery();
+
+  // Get related articles based on geographic logic (Oregon -> Oregon, Washington -> Washington)
+  const getRelatedArticles = () => {
+    if (!post) return [];
+
+    // Determine if the current article is Oregon or Washington focused
+    // Check title for Oregon keyword (more reliable than content which may have many mentions)
+    const isOregonPost = post.title.toLowerCase().includes('oregon');
+
+    // Filter related articles by geography
+    const related = allPosts.filter(p => {
+      if (p.id === post.id) return false; // Exclude current article
+
+      const pIsOregon = p.title.toLowerCase().includes('oregon');
+
+      // Match geography: Oregon posts link to Oregon, Washington to Washington
+      return isOregonPost === pIsOregon;
+    });
+
+    // Return up to 3 related articles
+    return related.slice(0, 3);
+  };
+
+  const relatedArticles = getRelatedArticles();
+
   // Set SEO metadata for the blog post
   useSEO(
     post ? {
@@ -128,7 +155,35 @@ export default function BlogPost() {
 
 
 
-          {/* Related articles or CTA */}
+          {/* Related articles */}
+          {relatedArticles.length > 0 && (
+            <div className="border-t border-gray-700 pt-12 mt-12 mb-12">
+              <h3 className="text-2xl font-bold mb-8">Related Articles</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {relatedArticles.map((related) => (
+                  <button
+                    key={related.id}
+                    onClick={() => navigate(`/blog/${related.slug}`)}
+                    className="text-left p-4 border border-gray-700 rounded-lg hover:border-blue-600 hover:bg-gray-900/50 transition-all"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                        {related.category}
+                      </span>
+                    </div>
+                    <h4 className="font-bold text-lg mb-2 hover:text-blue-400 transition-colors">
+                      {related.title}
+                    </h4>
+                    <p className="text-sm text-gray-400 line-clamp-2">
+                      {related.excerpt}
+                    </p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Back to blog CTA */}
           <div className="border-t border-gray-700 pt-12 mt-12">
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-4">More from our blog</h3>
