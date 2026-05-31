@@ -84,8 +84,11 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
             <a className="mt-3 inline-block text-sm text-white transition hover:text-blue-300" href={contact.phoneHref}>{contact.phone}</a>
           </div>
           <div>
-            <p className="eyebrow">Access</p>
-            <a className="portal-button mt-4 inline-flex" href={portalUrl} target="_blank" rel="noreferrer">Client Portal <ArrowUpRight size={16} /></a>
+            <p className="eyebrow">Company</p>
+            <div className="mt-4 space-y-2 text-sm">
+              <Link href="/service-areas" className="block text-slate-300 transition hover:text-white">Service Areas</Link>
+              <a className="inline-flex items-center gap-1 text-slate-300 transition hover:text-white" href={portalUrl} target="_blank" rel="noreferrer">Client Portal <ArrowUpRight size={14} /></a>
+            </div>
           </div>
         </div>
       </footer>
