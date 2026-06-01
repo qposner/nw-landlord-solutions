@@ -1,6 +1,5 @@
 import { useState, useMemo } from "react";
 import { ArrowRight } from "lucide-react";
-import { blogPosts as staticBlogPosts } from "@/lib/siteData";
 import { PageHero } from "@/components/SharedSections";
 import { useSEO } from "@/hooks/useSEO";
 import { seoData } from "@/lib/seoData";
@@ -17,10 +16,10 @@ export default function Blog() {
   // Fetch database blog posts
   const { data: dbPosts = [] } = trpc.blog.getAll.useQuery();
 
-  // Combine database posts with static LinkedIn posts
+  // Use only database posts
   const allPosts = useMemo(() => {
-    const combined = [
-      ...dbPosts.map((post) => ({
+    return dbPosts
+      .map((post) => ({
         id: post.id,
         slug: post.slug,
         title: post.title,
@@ -30,12 +29,8 @@ export default function Blog() {
         read: post.readTime || "5 min read",
         image: post.imageUrl || "https://via.placeholder.com/400x250?text=Blog+Post",
         url: `/blog/${post.slug}`,
-        linkedInUrl: post.linkedInUrl,
-        isDatabase: true,
-      })),
-      ...staticBlogPosts,
-    ];
-    return combined.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      }))
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, [dbPosts]);
 
   const categories = ["All", ...Array.from(new Set(allPosts.map((post) => post.category)))];
@@ -55,39 +50,25 @@ export default function Blog() {
           <div className="blog-grid">
             {posts.map((post) => (
               <article className="blog-card" key={post.id || post.title}>
-                {post.isDatabase ? (
-                  <>
-                    <button
-                      className="blog-thumb"
-                      onClick={() => navigate(post.url)}
-                      aria-label={post.title}
-                    >
-                      <img src={post.image} alt="" />
-                    </button>
-                    <div className="blog-meta"><span>{post.category}</span><span>{post.read}</span></div>
-                    <h2>{post.title}</h2>
-                    <p>{post.excerpt}</p>
-                    <div className="blog-card-footer">
-                      <span>{post.date}</span>
-                      <button
-                        className="card-link"
-                        onClick={() => navigate(post.url)}
-                      >
-                        Read Article <ArrowRight size={16} />
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <a className="blog-thumb" href={post.url} target="_blank" rel="noreferrer" aria-label={post.title}>
-                      <img src={post.image} alt="" />
-                    </a>
-                    <div className="blog-meta"><span>{post.category}</span><span>{post.read}</span></div>
-                    <h2>{post.title}</h2>
-                    <p>{post.excerpt}</p>
-                    <div className="blog-card-footer"><span>{post.date}</span><a className="card-link" href={post.url} target="_blank" rel="noreferrer">Read on LinkedIn <ArrowRight size={16} /></a></div>
-                  </>
-                )}
+                <button
+                  className="blog-thumb"
+                  onClick={() => navigate(post.url)}
+                  aria-label={post.title}
+                >
+                  <img src={post.image} alt="" />
+                </button>
+                <div className="blog-meta"><span>{post.category}</span><span>{post.read}</span></div>
+                <h2>{post.title}</h2>
+                <p>{post.excerpt}</p>
+                <div className="blog-card-footer">
+                  <span>{post.date}</span>
+                  <button
+                    className="card-link"
+                    onClick={() => navigate(post.url)}
+                  >
+                    Read Article <ArrowRight size={16} />
+                  </button>
+                </div>
               </article>
             ))}
           </div>
