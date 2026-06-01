@@ -11,7 +11,6 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
-import BlogCategory from "./pages/BlogCategory";
 import Contact from "./pages/Contact";
 import ServiceAreas from "./pages/ServiceAreas";
 
@@ -28,7 +27,6 @@ function Router() {
         <Route path="/services" component={Services} />
         <Route path="/about" component={About} />
         <Route path="/blog" component={Blog} />
-        <Route path="/blog/category/:category" component={BlogCategory} />
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/contact" component={Contact} />
         <Route path="/service-areas" component={ServiceAreas} />

@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { blogPosts as staticBlogPosts } from "@/lib/siteData";
 import { PageHero } from "@/components/SharedSections";
 import { useSEO } from "@/hooks/useSEO";
@@ -13,7 +13,6 @@ Design philosophy reminder: Swiss International Typographic Style translated int
 export default function Blog() {
   useSEO(seoData.blog);
   const [, navigate] = useLocation();
-  const [searchQuery, setSearchQuery] = useState("");
 
   // Fetch database blog posts
   const { data: dbPosts = [] } = trpc.blog.getAll.useQuery();
@@ -41,62 +40,18 @@ export default function Blog() {
 
   const categories = ["All", ...Array.from(new Set(allPosts.map((post) => post.category)))];
   const [active, setActive] = useState("All");
-  
-  // Filter by category and search query
-  const posts = useMemo(() => {
-    let filtered = active === "All" ? allPosts : allPosts.filter((post) => post.category === active);
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
-      filtered = filtered.filter((post) => post.title.toLowerCase().includes(query) || post.excerpt.toLowerCase().includes(query));
-    }
-    return filtered;
-  }, [active, allPosts, searchQuery]);
+  const posts = useMemo(() => active === "All" ? allPosts : allPosts.filter((post) => post.category === active), [active, allPosts]);
 
   return (
     <>
       <PageHero kicker="Blog" title="Eviction law topics for property management operations." text="Placeholder index for procedural notes, Washington landlord-side updates, and operational guidance. No sidebars. No consumer-law content." />
       <section className="section-pad">
         <div className="container">
-          {/* Search bar */}
-          <div className="mb-8 flex items-center gap-2 bg-gray-800 rounded-lg px-4 py-2 border border-gray-700">
-            <Search size={18} className="text-gray-400" />
-            <input
-              type="text"
-              placeholder="Search articles..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 bg-transparent outline-none text-white placeholder-gray-500"
-            />
-          </div>
-          
-          {/* Category filter */}
           <div className="filter-bar" aria-label="Blog categories">
             {categories.map((category) => (
               <button key={category} className={active === category ? "filter-chip filter-chip-active" : "filter-chip"} onClick={() => setActive(category)}>{category}</button>
             ))}
           </div>
-          {/* Results count */}
-          {searchQuery && (
-            <div className="mb-6 text-sm text-gray-400">
-              Found {posts.length} article{posts.length !== 1 ? "s" : ""} matching "{searchQuery}"
-            </div>
-          )}
-          
-          {/* No results message */}
-          {posts.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-400 mb-4">No articles found{searchQuery ? " matching your search" : ""}.</p>
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="text-blue-600 hover:text-blue-700 text-sm font-medium"
-                >
-                  Clear search
-                </button>
-              )}
-            </div>
-          )}
-          
           <div className="blog-grid">
             {posts.map((post) => (
               <article className="blog-card" key={post.id || post.title}>
@@ -114,20 +69,12 @@ export default function Blog() {
                     <p>{post.excerpt}</p>
                     <div className="blog-card-footer">
                       <span>{post.date}</span>
-                      <div className="flex items-center gap-3">
-                        <button
-                          onClick={() => navigate(`/blog/category/${encodeURIComponent(post.category)}`)}
-                          className="text-xs font-semibold uppercase tracking-wider text-blue-600 hover:text-blue-700 transition-colors"
-                        >
-                          View category
-                        </button>
-                        <button
-                          className="card-link"
-                          onClick={() => navigate(post.url)}
-                        >
-                          Read Article <ArrowRight size={16} />
-                        </button>
-                      </div>
+                      <button
+                        className="card-link"
+                        onClick={() => navigate(post.url)}
+                      >
+                        Read Article <ArrowRight size={16} />
+                      </button>
                     </div>
                   </>
                 ) : (
