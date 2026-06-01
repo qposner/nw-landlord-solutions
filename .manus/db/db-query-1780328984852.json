@@ -1,0 +1,45 @@
+{
+  "query": "SELECT slug, title, imageUrl FROM blog_posts WHERE imageUrl IS NULL OR imageUrl = '';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user cQzbaZXvQUqywky.root --database EEgHWt2GYcdttMiMvAp3Dc --execute SELECT slug, title, imageUrl FROM blog_posts WHERE imageUrl IS NULL OR imageUrl = '';",
+  "rows": [
+    {
+      "slug": "right-to-counsel-opposing-funded-attorneys",
+      "title": "Right to Counsel: What Landlords Need to Know About Opposing Funded Attorneys",
+      "imageUrl": "NULL"
+    },
+    {
+      "slug": "city-specific-ordinance-landmines-seattle-tacoma",
+      "title": "City-Specific Ordinance Landmines: Seattle, Tacoma, and Beyond",
+      "imageUrl": "NULL"
+    },
+    {
+      "slug": "managing-evictions-southwest-washington-counties",
+      "title": "Managing Evictions Across Three Southwest Washington Counties: What PM Companies Get Wrong",
+      "imageUrl": "NULL"
+    },
+    {
+      "slug": "submit-eviction-9pm-open-by-morning",
+      "title": "Submit an Eviction at 9 PM. We'll Have It Open by Morning.",
+      "imageUrl": "NULL"
+    },
+    {
+      "slug": "why-eviction-firm-should-feel-like-software-company",
+      "title": "Why Your Eviction Firm Should Feel Like a Software Company",
+      "imageUrl": "NULL"
+    },
+    {
+      "slug": "the-2026-rent-cap-9683-percent",
+      "title": "The 2026 Rent Cap: What 9.683% Actually Means for Your Portfolio",
+      "imageUrl": "NULL"
+    },
+    {
+      "slug": "certified-mail-fix-hb2664-eviction-notices",
+      "title": "The Certified Mail Fix Is Here: What HB 2664 Means for Your Eviction Notices",
+      "imageUrl": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "slug\ttitle\timageUrl\nright-to-counsel-opposing-funded-attorneys\tRight to Counsel: What Landlords Need to Know About Opposing Funded Attorneys\tNULL\ncity-specific-ordinance-landmines-seattle-tacoma\tCity-Specific Ordinance Landmines: Seattle, Tacoma, and Beyond\tNULL\nmanaging-evictions-southwest-washington-counties\tManaging Evictions Across Three Southwest Washington Counties: What PM Companies Get Wrong\tNULL\nsubmit-eviction-9pm-open-by-morning\tSubmit an Eviction at 9 PM. We'll Have It Open by Morning.\tNULL\nwhy-eviction-firm-should-feel-like-software-company\tWhy Your Eviction Firm Should Feel Like a Software Company\tNULL\nthe-2026-rent-cap-9683-percent\tThe 2026 Rent Cap: What 9.683% Actually Means for Your Portfolio\tNULL\ncertified-mail-fix-hb2664-eviction-notices\tThe Certified Mail Fix Is Here: What HB 2664 Means for Your Eviction Notices\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 270
+}
