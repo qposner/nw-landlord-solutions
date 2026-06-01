@@ -10,17 +10,10 @@ Design philosophy reminder: Swiss International Typographic Style translated int
 export default function ServiceAreas() {
   useSEO(seoData.serviceAreas);
 
-  const washingtonCities = [
-    "Seattle",
-    "Tacoma",
-    "Spokane",
-    "Vancouver",
-    "Bellevue",
-    "Kent",
-    "Renton",
-    "Federal Way",
-    "Everett",
-    "Kirkland",
+  const activeCounties = [
+    { name: "Clark County", description: "Vancouver, Camas, Washougal" },
+    { name: "Cowlitz County", description: "Longview, Kelso, Woodland" },
+    { name: "Skamania County", description: "Stevenson, White Salmon" },
   ];
 
   return (
@@ -34,12 +27,18 @@ export default function ServiceAreas() {
         <div className="container split-grid">
           <div>
             <p className="eyebrow">Current operations</p>
-            <h2 className="large-section-title">Washington State: Fully operational statewide.</h2>
-            <p className="section-copy">NW Landlord Solutions provides tech-enabled, flat-fee eviction services to property management companies and portfolio landlords across Washington State. Our platform is fully integrated with Washington's landlord-tenant law, court systems, and procedural requirements.</p>
+            <h2 className="large-section-title">Southwest Washington: Clark, Cowlitz, and Skamania counties.</h2>
+            <p className="section-copy">NW Landlord Solutions currently provides tech-enabled, flat-fee eviction services exclusively in Southwest Washington. We serve property management companies and portfolio landlords across Clark, Cowlitz, and Skamania counties with full integration into local court systems and procedural requirements.</p>
           </div>
           <div className="model-list">
             <div className="model-item">
-              <CheckCircle2 size={18} className="text-green-500" /> <span>All Washington counties and municipalities</span>
+              <CheckCircle2 size={18} className="text-green-500" /> <span>Clark County (Vancouver, Camas, Washougal)</span>
+            </div>
+            <div className="model-item">
+              <CheckCircle2 size={18} className="text-green-500" /> <span>Cowlitz County (Longview, Kelso, Woodland)</span>
+            </div>
+            <div className="model-item">
+              <CheckCircle2 size={18} className="text-green-500" /> <span>Skamania County (Stevenson, White Salmon)</span>
             </div>
             <div className="model-item">
               <CheckCircle2 size={18} className="text-green-500" /> <span>Flat-fee eviction services</span>
@@ -56,18 +55,18 @@ export default function ServiceAreas() {
       <section className="section-pad">
         <div className="container">
           <SectionHeader
-            kicker="Washington coverage"
-            title="Serving property managers across all Washington counties."
-            text="From Clark County to the San Juan Islands, our platform supports eviction management for property management companies operating statewide."
+            kicker="Southwest Washington coverage"
+            title="Serving three core counties in Southwest Washington."
+            text="Our current operations focus on Clark, Cowlitz, and Skamania counties, where we maintain deep expertise in local court procedures and landlord-tenant requirements."
           />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {washingtonCities.map((city) => (
-              <div key={city} className="p-4 border border-gray-800 rounded-lg bg-gray-900/50 hover:bg-gray-900/80 transition-colors">
-                <div className="flex items-center gap-2 mb-2">
-                  <MapPin size={16} className="text-blue-600" />
-                  <span className="font-medium">{city}</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {activeCounties.map((county) => (
+              <div key={county.name} className="p-6 border border-gray-800 rounded-lg bg-gray-900/50 hover:bg-gray-900/80 transition-colors">
+                <div className="flex items-center gap-2 mb-3">
+                  <MapPin size={18} className="text-green-500" />
+                  <span className="font-bold text-lg">{county.name}</span>
                 </div>
-                <p className="text-xs text-gray-400">Washington</p>
+                <p className="text-sm text-gray-400">{county.description}</p>
               </div>
             ))}
           </div>
@@ -83,23 +82,23 @@ export default function ServiceAreas() {
       <section className="section-pad">
         <div className="container">
           <SectionHeader
-            kicker="Future markets"
-            title="Oregon and Arizona: Under evaluation."
-            text="We are exploring expansion into these states, but do not currently offer legal services or representation outside Washington."
+            kicker="Future expansion"
+            title="Oregon and Rest of Washington: Coming soon."
+            text="We are building infrastructure for strategic expansion while maintaining our commitment to excellence in Southwest Washington."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <article className="border border-gray-800 rounded-lg p-8 bg-gray-900/50">
               <p className="eyebrow mb-2">Oregon</p>
-              <h3 className="text-xl font-bold mb-4">Expansion planned for late 2026</h3>
-              <p className="text-gray-400 mb-4">We are currently building the legal and technical infrastructure to launch services in Oregon. Due to Oregon's distinct tenant protection framework, we are taking a meticulous approach to ensure full compliance before launch.</p>
+              <h3 className="text-xl font-bold mb-4">Launching late 2026</h3>
+              <p className="text-gray-400 mb-4">We are building the legal and technical infrastructure to launch services in Oregon. Due to Oregon's distinct tenant protection framework, we are taking a meticulous approach to ensure full compliance before launch.</p>
               <Link href="/contact" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-500 text-sm font-medium">
                 Join Oregon Waitlist <ArrowRight size={16} />
               </Link>
             </article>
             <article className="border border-gray-800 rounded-lg p-8 bg-gray-900/50">
-              <p className="eyebrow mb-2">Arizona</p>
-              <h3 className="text-xl font-bold mb-4">Under consideration</h3>
-              <p className="text-gray-400 mb-4">Arizona is currently under evaluation as a possible future expansion market. We are assessing the operational and legal requirements for Phoenix and Tucson markets as part of our long-term roadmap.</p>
+              <p className="eyebrow mb-2">Rest of Washington State</p>
+              <h3 className="text-xl font-bold mb-4">Launching 2027</h3>
+              <p className="text-gray-400 mb-4">After establishing our foundation in Southwest Washington and launching in Oregon, we plan to expand to serve additional Washington counties. This phased approach ensures we maintain service quality across all markets.</p>
               <Link href="/contact" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-500 text-sm font-medium">
                 Express Interest <ArrowRight size={16} />
               </Link>
