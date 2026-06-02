@@ -21,3 +21,9 @@
 - [x] Verify article renders correctly on blog listing and detail pages
 - [x] Verify Related Articles component correctly identifies it as a Washington post
 - [x] Confirm hero image displays properly
+
+## SEO & Author Authority (High Priority)
+
+- [x] Update sitemap.xml to include /blog/true-cost-eviction-delay
+- [x] Implement JSON-LD author markup for Quinn Posner across all blog posts (E-E-A-T strategy)
+- [x] Verify new article has no LinkedIn references and proper Related Articles linking

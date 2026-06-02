@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 import { trpc } from "@/lib/trpc";
 import { Streamdown } from "streamdown";
+import { getBlogPostSchema } from "@/lib/seoData";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -41,7 +42,7 @@ export default function BlogPost() {
 
   const relatedArticles = getRelatedArticles();
 
-  // Set SEO metadata for the blog post
+  // Set SEO metadata for the blog post with JSON-LD author schema
   useSEO(
     post ? {
       title: post.title,
@@ -50,6 +51,13 @@ export default function BlogPost() {
       ogImage: post.imageUrl,
       type: "article",
       publishedTime: post.publishedAt,
+      schema: getBlogPostSchema({
+        title: post.title,
+        excerpt: post.excerpt,
+        date: post.publishedAt?.toISOString() || new Date().toISOString(),
+        url: `https://waevictions.com/blog/${post.slug}`,
+        image: post.imageUrl,
+      }),
     } : undefined
   );
 
