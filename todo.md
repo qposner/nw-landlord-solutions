@@ -27,3 +27,20 @@
 - [x] Update sitemap.xml to include /blog/true-cost-eviction-delay
 - [x] Implement JSON-LD author markup for Quinn Posner across all blog posts (E-E-A-T strategy)
 - [x] Verify new article has no LinkedIn references and proper Related Articles linking
+
+## Blog Category Pages (High Priority - Topical Map Strategy)
+
+- [x] Build /blog/legal-compliance category page with filtered articles
+- [x] Build /blog/operational-excellence category page with filtered articles
+- [x] Implement geographic filtering on category pages (Southwest WA focus)
+- [x] Add category page schema and metadata for SEO
+- [x] Verify no LinkedIn references on category pages
+- [x] Test category page links from blog listing
+
+## Author Bio Card (High Priority - Lead Generation)
+
+- [x] Create AuthorBioCard component with Quinn Posner credentials
+- [x] Add "Contact for Consultation" CTA button
+- [x] Integrate author card into blog post pages (below content)
+- [x] Style author card to match brand design
+- [x] Verify author card renders on all blog posts

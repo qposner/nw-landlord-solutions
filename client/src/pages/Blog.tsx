@@ -43,9 +43,32 @@ export default function Blog() {
       <section className="section-pad">
         <div className="container">
           <div className="filter-bar" aria-label="Blog categories">
-            {categories.map((category) => (
-              <button key={category} className={active === category ? "filter-chip filter-chip-active" : "filter-chip"} onClick={() => setActive(category)}>{category}</button>
-            ))}
+            {categories.map((category) => {
+              if (category === "All") {
+                return (
+                  <button
+                    key={category}
+                    className={active === category ? "filter-chip filter-chip-active" : "filter-chip"}
+                    onClick={() => setActive(category)}
+                  >
+                    {category}
+                  </button>
+                );
+              }
+              const categorySlug = category.toLowerCase().replace(/\s+/g, "-");
+              return (
+                <button
+                  key={category}
+                  className={active === category ? "filter-chip filter-chip-active" : "filter-chip"}
+                  onClick={() => {
+                    setActive(category);
+                    navigate(`/blog/${categorySlug}`);
+                  }}
+                >
+                  {category}
+                </button>
+              );
+            })}
           </div>
           <div className="blog-grid">
             {posts.map((post) => (

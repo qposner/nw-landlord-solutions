@@ -4,6 +4,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { trpc } from "@/lib/trpc";
 import { Streamdown } from "streamdown";
 import { getBlogPostSchema } from "@/lib/seoData";
+import { AuthorBioCard } from "@/components/AuthorBioCard";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -161,7 +162,8 @@ export default function BlogPost() {
             <Streamdown>{post.content || post.htmlContent}</Streamdown>
           </div>
 
-
+          {/* Author Bio Card */}
+          <AuthorBioCard />
 
           {/* Related articles */}
           {relatedArticles.length > 0 && (
