@@ -14,3 +14,10 @@
 - [x] Update sitemap.xml to include all 10 URLs (homepage, main pages, blog articles, service areas)
 - [x] Verify Washington-only active framing on all new Oregon content
 - [x] Test dynamic routing for both new blog articles
+
+## New Article: The True Cost of Eviction Delay
+
+- [x] Insert "The True Cost of Eviction Delay" article into blog_posts database
+- [x] Verify article renders correctly on blog listing and detail pages
+- [x] Verify Related Articles component correctly identifies it as a Washington post
+- [x] Confirm hero image displays properly
