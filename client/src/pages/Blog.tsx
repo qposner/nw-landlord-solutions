@@ -19,18 +19,26 @@ export default function Blog() {
   // Use only database posts
   const allPosts = useMemo(() => {
     return dbPosts
-      .map((post) => ({
-        id: post.id,
-        slug: post.slug,
-        title: post.title,
-        excerpt: post.excerpt,
-        category: post.category,
-        date: post.publishedAt ? new Date(post.publishedAt).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : new Date().toLocaleDateString(),
-        read: post.readTime || "5 min read",
-        image: post.imageUrl || "https://via.placeholder.com/400x250?text=Blog+Post",
-        url: `/blog/${post.slug}`,
-      }))
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+      .map((post) => {
+        // Handle publishedAt as either Date object or string
+        const publishDate = post.publishedAt instanceof Date 
+          ? post.publishedAt 
+          : new Date(post.publishedAt || new Date());
+        
+        return {
+          id: post.id,
+          slug: post.slug,
+          title: post.title,
+          excerpt: post.excerpt,
+          category: post.category,
+          date: publishDate.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }),
+          publishTime: publishDate.getTime(),
+          read: post.readTime || "5 min read",
+          image: post.imageUrl || "https://via.placeholder.com/400x250?text=Blog+Post",
+          url: `/blog/${post.slug}`,
+        };
+      })
+      .sort((a, b) => b.publishTime - a.publishTime);
   }, [dbPosts]);
 
   const categories = ["All", ...Array.from(new Set(allPosts.map((post) => post.category)))];

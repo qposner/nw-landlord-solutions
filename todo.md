@@ -44,3 +44,11 @@
 - [x] Integrate author card into blog post pages (below content)
 - [x] Style author card to match brand design
 - [x] Verify author card renders on all blog posts
+
+## BUG: Flood Disclosure Article Disappears (BLOCKING)
+
+- [x] Verify flood disclosure article exists in database
+- [x] Check blog post query logic for filtering issues
+- [x] Examine browser console logs for errors
+- [x] Fix the disappearing article issue (date handling in Blog.tsx)
+- [x] Test article persistence on blog page and detail page

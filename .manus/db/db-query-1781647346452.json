@@ -1,0 +1,17 @@
+{
+  "query": "SELECT id, title, slug, category, publishedAt FROM blog_posts WHERE slug = 'flood-disclosure-law-washington-2027';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user cQzbaZXvQUqywky.root --database EEgHWt2GYcdttMiMvAp3Dc --execute SELECT id, title, slug, category, publishedAt FROM blog_posts WHERE slug = 'flood-disclosure-law-washington-2027';",
+  "rows": [
+    {
+      "id": "150001",
+      "title": "Flood Disclosure Is Now the Law: What Washington Landlords Must Add to Leases Before January 1, 2027",
+      "slug": "flood-disclosure-law-washington-2027",
+      "category": "Legal Compliance",
+      "publishedAt": "2026-06-09 00:00:00"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tslug\tcategory\tpublishedAt\n150001\tFlood Disclosure Is Now the Law: What Washington Landlords Must Add to Leases Before January 1, 2027\tflood-disclosure-law-washington-2027\tLegal Compliance\t2026-06-09 00:00:00\n",
+  "stderr": "",
+  "execution_time_ms": 270
+}
