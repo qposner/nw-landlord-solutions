@@ -79,8 +79,9 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
             <p className="mt-5 max-w-md text-sm leading-6 text-slate-400">Landlord-side Washington State eviction representation structured for property management companies and portfolio operators.</p>
           </div>
           <div>
-            <p className="eyebrow">Office</p>
+            <p className="eyebrow">Mailing Address</p>
             <p className="mt-4 text-sm leading-6 text-slate-300">{contact.address}</p>
+            <p className="mt-3 text-xs leading-5 text-slate-400">{contact.serviceArea}</p>
             <a className="mt-3 inline-block text-sm text-white transition hover:text-blue-300" href={contact.phoneHref}>{contact.phone}</a>
           </div>
           <div>

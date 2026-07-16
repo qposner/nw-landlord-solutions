@@ -52,3 +52,15 @@
 - [x] Examine browser console logs for errors
 - [x] Fix the disappearing article issue (date handling in Blog.tsx)
 - [x] Test article persistence on blog page and detail page
+
+## Service Area Business (SAB) Model Transition (High Priority)
+
+- [x] Audit current footer for old physical address (532 NE 3rd Ave)
+- [x] Audit current schema for conflicting address data
+- [x] Update Footer component with P.O. Box mailing address
+- [x] Add JSON-LD SAB schema to Home.tsx
+- [x] Remove old physical address schema
+- [ ] Test with Google Rich Results Test
+- [ ] Verify on live website
+- [ ] Update Google Business Profile to SAB model
+- [ ] Submit sitemap to Google Search Console

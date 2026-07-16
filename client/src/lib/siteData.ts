@@ -12,9 +12,11 @@ export const assets = {
 };
 
 export const contact = {
-  address: "532 NE 3rd Ave Suite 105, Camas, WA 98607",
-  phone: "(360) 695-0770",
-  phoneHref: "tel:+13606950770",
+  address: "PO Box 1008, Camas, WA 98607",
+  phone: "(360) 699-0770",
+  phoneHref: "tel:+13606990770",
+  email: "info@waevictions.com",
+  serviceArea: "Serving Property Managers & Portfolio Landlords throughout Southwest Washington | Virtual Consultations & Tech-Enabled Case Management",
 };
 
 export const navItems = [
