@@ -20,6 +20,7 @@ export const contact = {
   phoneHref: "tel:+13606990770",
   email: "info@waevictions.com",
   serviceArea: "Serving Property Managers & Portfolio Landlords throughout Southwest Washington | Virtual Consultations & Tech-Enabled Case Management",
+  disclaimer: "The information provided on this website is for general informational purposes only and does not constitute formal legal advice or create an attorney-client relationship.",
 };
 
 export const navItems = [
