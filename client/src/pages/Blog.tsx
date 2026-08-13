@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/SharedSections";
 import { useSEO } from "@/hooks/useSEO";
 import { seoData } from "@/lib/seoData";
-import { trpc } from "@/lib/trpc";
+import { blogPosts as dbPosts } from "@/lib/blogData";
 import { useLocation } from "wouter";
 
 /*
@@ -13,10 +13,7 @@ export default function Blog() {
   useSEO(seoData.blog);
   const [, navigate] = useLocation();
 
-  // Fetch database blog posts
-  const { data: dbPosts = [] } = trpc.blog.getAll.useQuery();
-
-  // Use only database posts
+  // Use statically bundled posts
   const allPosts = useMemo(() => {
     return dbPosts
       .map((post) => {

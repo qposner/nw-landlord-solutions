@@ -1,14 +1,17 @@
+import { withBase } from "./base";
+
 export const portalUrl = "https://app2.ixfoundry.co/sign-in";
 
 export const assets = {
-  hero: "https://d2xsxph8kpxj0f.cloudfront.net/310519663634024411/EEgHWt2GYcdttMiMvAp3Dc/nwls-hero-command-center-5GmyR4dXQwJwMNArNfXwhG.webp",
-  platform: "https://d2xsxph8kpxj0f.cloudfront.net/310519663634024411/EEgHWt2GYcdttMiMvAp3Dc/nwls-platform-interface-j4cWg7XygdMeUTNSmHGwbz.webp",
-  process: "https://d2xsxph8kpxj0f.cloudfront.net/310519663634024411/EEgHWt2GYcdttMiMvAp3Dc/nwls-process-rail-C8RD6UySMntYUGvqhoEWka.webp",
-  portal: "/manus-storage/Screenshot2026-05-20at2.05.45PM_5beffaf1.webp",
-  portalSmall: "/manus-storage/page-000_16fd73f0.png",
-  dashboard: "/manus-storage/page-000_16fd73f0.png",
-  headshot: "/manus-storage/nwls-quinn-posner-headshot_31eeb49b.png",
-  logo: "/manus-storage/nwls-logo-transparent_b86d5fdd.png",
+  hero: withBase("/images/hero.webp"),
+  platform: withBase("/images/platform.webp"),
+  process: withBase("/images/process.webp"),
+  portal: withBase("/images/portal.webp"),
+  portalSmall: withBase("/images/portal-small.png"),
+  dashboard: withBase("/images/portal-small.png"),
+  dashboardList: withBase("/images/dashboard-list.png"),
+  headshot: withBase("/images/headshot.png"),
+  logo: withBase("/images/logo.png"),
 };
 
 export const contact = {
@@ -60,7 +63,7 @@ export const blogPosts = [
     date: "May 26, 2026",
     read: "11 min",
     url: "https://www.linkedin.com/pulse/14-day-pay-vacate-notice-compliance-checklist-before-rules-posner-dlfvc/",
-    image: "/manus-storage/14_day_pay_vacate_cover_bd15e7ac.webp",
+    image: withBase("/blog-images/14_day_pay_vacate_cover_bd15e7ac.webp"),
   },
   {
     title: "Right to Counsel: What Landlords Need to Know About Opposing Funded Attorneys",
@@ -69,7 +72,7 @@ export const blogPosts = [
     date: "May 18, 2026",
     read: "10 min",
     url: "https://www.linkedin.com/pulse/right-counsel-what-landlords-need-know-opposing-funded-quinn-posner-vpiic/",
-    image: "/manus-storage/right_to_counsel_cover_cf97e8f3.webp",
+    image: withBase("/blog-images/right_to_counsel_cover_cf97e8f3.webp"),
   },
   {
     title: "City-Specific Ordinance Landmines: Seattle, Tacoma, and Beyond",
@@ -78,7 +81,7 @@ export const blogPosts = [
     date: "May 11, 2026",
     read: "8 min",
     url: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7459632380937543681/",
-    image: "/manus-storage/city_ordinance_landmines_cover_de155849.webp",
+    image: withBase("/blog-images/city_ordinance_landmines_cover_de155849.webp"),
   },
   {
     title: "Submit an Eviction at 9 PM. We'll Have It Open by Morning.",
@@ -87,7 +90,7 @@ export const blogPosts = [
     date: "May 4, 2026",
     read: "7 min",
     url: "https://www.linkedin.com/pulse/submit-eviction-9-pm-well-have-open-morning-quinn-posner-b8wic/",
-    image: "/manus-storage/submit-eviction-9pm_a7e5ace1.jpg",
+    image: withBase("/blog-images/submit-eviction-9pm_a7e5ace1.jpg"),
   },
   {
     title: "Managing Evictions Across Three Southwest Washington Counties: What PM Companies Get Wrong",
@@ -96,7 +99,7 @@ export const blogPosts = [
     date: "Apr 20, 2026",
     read: "8 min",
     url: "https://www.linkedin.com/pulse/managing-evictions-across-three-southwest-washington-counties-posner-chdhc/",
-    image: "/manus-storage/three-counties_84087874.jpg",
+    image: withBase("/blog-images/three-counties_84087874.jpg"),
   },
   {
     title: "Why Your Eviction Firm Should Feel Like a Software Company",
@@ -105,7 +108,7 @@ export const blogPosts = [
     date: "Apr 13, 2026",
     read: "7 min",
     url: "https://www.linkedin.com/pulse/why-your-eviction-firm-should-feel-like-software-company-quinn-posner-kxjyc/",
-    image: "/manus-storage/software-company_c448c4d5.jpg",
+    image: withBase("/blog-images/software-company_c448c4d5.jpg"),
   },
   {
     title: "The 2026 Rent Cap: What 9.683% Actually Means for Your Portfolio",
@@ -114,7 +117,7 @@ export const blogPosts = [
     date: "Apr 6, 2026",
     read: "8 min",
     url: "https://www.linkedin.com/pulse/2026-rent-cap-what-9683-actually-means-your-portfolio-quinn-posner-qlmmc/",
-    image: "/manus-storage/rent-cap-2026_14d24a69.jpg",
+    image: withBase("/blog-images/rent-cap-2026_14d24a69.jpg"),
   },
   {
     title: "The Certified Mail Fix Is Here: What HB 2664 Means for Your Eviction Notices",
@@ -123,6 +126,6 @@ export const blogPosts = [
     date: "Mar 30, 2026",
     read: "6 min",
     url: "https://www.linkedin.com/pulse/certified-mail-fix-here-what-hb-2664-means-your-eviction-quinn-posner-crkxc/",
-    image: "/manus-storage/certified-mail-fix-fallback_e448ee14.jpg",
+    image: withBase("/blog-images/certified-mail-fix-fallback_e448ee14.jpg"),
   },
 ];

@@ -1,9 +1,0 @@
-{
-  "query": "UPDATE blog_posts SET imageUrl = '/manus-storage/Gemini_Generated_Image_e64w13e64w13e64w_75e1d227.png' WHERE slug = 'oregon-eviction-services-vs-diy';",
-  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user cQzbaZXvQUqywky.root --database EEgHWt2GYcdttMiMvAp3Dc --execute UPDATE blog_posts SET imageUrl = '/manus-storage/Gemini_Generated_Image_e64w13e64w13e64w_75e1d227.png' WHERE slug = 'oregon-eviction-services-vs-diy';",
-  "rows": [],
-  "messages": [],
-  "stdout": "",
-  "stderr": "",
-  "execution_time_ms": 1819
-}

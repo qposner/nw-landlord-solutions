@@ -1,58 +1,33 @@
-# NW Landlord Solutions Website
+# NW Landlord Solutions — Static Site
 
-A complete multi-page React/Tailwind website for **NW Landlord Solutions**, positioned as a Washington landlord-side eviction law firm presented through a B2B legal-technology product aesthetic.
+Marketing site for NW Landlord Solutions (waevictions.com), converted from a Manus full-stack app (React + Express + tRPC + MySQL) to a fully static React SPA deployable on GitHub Pages.
 
-## Pages
+## What changed in the conversion
 
-| Route | Purpose |
-|---|---|
-| `/` | Home page with hero, metrics, workflow, services overview, why-us section, and client portal CTA. |
-| `/platform` | Product-style platform page structured as Problem → Solution → Workflow → Efficiency Impact. |
-| `/services` | Flat-fee service model page without public price listing, emphasizing predictability and volume efficiency. |
-| `/about` | Philosophy-forward Quinn Posner profile with Clark County, landlord-side, and WMFHA proof points. |
-| `/blog` | Card-based blog index with category filters and placeholder eviction-law topics. |
-| `/contact` | Static contact/intake form, office address, and phone number. |
+- **Blog posts** are baked in at build time: all 15 posts (content, categories, images) were exported from the production database into [client/src/lib/blogPosts.json](client/src/lib/blogPosts.json) and served through [client/src/lib/blogData.ts](client/src/lib/blogData.ts). No database or API is needed.
+- **Images** (blog covers, logo, headshot, portal screenshots) were downloaded from the live site into `client/public/blog-images/` and `client/public/images/`.
+- **Server removed**: Express/tRPC/Drizzle/MySQL, auth, and the Manus runtime plugins are gone. The contact form already posted to Formspree, so it keeps working statically.
+- **SPA routing on Pages**: the build copies `index.html` to `404.html` so deep links like `/blog/some-post` load the app, and adds `.nojekyll`.
 
-## Design System
+## Updating blog posts
 
-The site follows a **dark SaaS command-center** aesthetic with a Swiss typographic structure. It uses deep navy surfaces, electric-blue operational signals, geometric cards, generous whitespace, custom generated product visuals, and restrained glow effects on primary calls to action.
+Edit `client/src/lib/blogPosts.json` (add the cover image to `client/public/blog-images/` and reference it as `/blog-images/<file>`), then rebuild. The old Search Atlas webhook no longer applies — posts are files now.
 
-| Token | Value |
-|---|---|
-| Base | `#0a0f1e` |
-| Primary accent | `#2563eb` |
-| Secondary | `#ffffff` |
-| Muted text | `#94a3b8` |
-| Display type | Space Grotesk |
-| Body type | IBM Plex Sans |
-| Metadata type | IBM Plex Mono |
-
-## Client Portal
-
-All persistent **Client Portal** actions link to:
-
-```txt
-https://app2.ixfoundry.co/sign-in
-```
-
-## Local Development
+## Develop / build
 
 ```bash
-pnpm install
-pnpm dev
+npm install
+npm run dev       # local dev server
+npm run build     # outputs static site to dist/
+npm run preview   # serve the built site locally
 ```
 
-## Production Build
+## Deploying to GitHub Pages
 
-```bash
-pnpm build
-pnpm start
-```
+1. Create a GitHub repo and push this project (`main` branch).
+2. In the repo: **Settings → Pages → Source: GitHub Actions**.
+3. The included workflow ([.github/workflows/deploy.yml](.github/workflows/deploy.yml)) builds and deploys on every push to `main`. It auto-detects the base path: project sites build with `/<repo>/`, while `<user>.github.io` repos or a custom domain build at `/`.
 
-## Framer Import Notes
+### Custom domain (waevictions.com)
 
-This is clean, componentized React/Tailwind code. For Framer workflows, import or recreate pages from the generated static build or transfer the component structure manually. The design uses standard HTML semantics, CSS classes, and externally hosted image assets rather than canvas-only effects, making it straightforward to reproduce in Framer.
-
-## Static Form Note
-
-The contact form is intentionally frontend-only in this static build. It validates required fields and shows a preview confirmation. Connect a form endpoint or CRM integration before using it as a production intake channel.
+Add a file `client/public/CNAME` containing `waevictions.com`, push, then configure the domain under **Settings → Pages** and point DNS (CNAME record → `<user>.github.io`). The workflow detects the CNAME file and builds with base `/`.

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/SharedSections";
 import { useSEO } from "@/hooks/useSEO";
-import { trpc } from "@/lib/trpc";
+import { blogPosts as dbPosts } from "@/lib/blogData";
 import { useLocation, useParams } from "wouter";
 import { getBlogPostSchema } from "@/lib/seoData";
 
@@ -32,15 +32,13 @@ const categoryConfigs: Record<string, CategoryConfig> = {
 };
 
 export default function BlogCategory() {
-  const { category } = useParams<{ category: string }>();
+  const params = useParams<{ category?: string; slug?: string }>();
+  const category = params.category ?? params.slug;
   const [, navigate] = useLocation();
 
   const config = category ? categoryConfigs[category] : null;
 
-  // Fetch all blog posts
-  const { data: dbPosts = [] } = trpc.blog.getAll.useQuery();
-
-  // Filter posts by category
+  // Filter statically bundled posts by category
   const categoryPosts = useMemo(() => {
     if (!config) return [];
 

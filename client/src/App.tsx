@@ -1,7 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useParams } from "wouter";
+import { getBlogPostBySlug } from "@/lib/blogData";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import SiteLayout from "./components/SiteLayout";
@@ -18,6 +19,12 @@ import ServiceAreas from "./pages/ServiceAreas";
 /*
 Design philosophy reminder: Swiss International Typographic Style translated into a dark enterprise SaaS command center. Use deep navy surfaces, electric-blue operational signals, sharp geometry, asymmetric layouts, and direct institutional language.
 */
+// /blog/:slug serves both articles and category pages; articles win when the slug matches a post.
+function BlogSlugDispatch() {
+  const { slug } = useParams<{ slug: string }>();
+  return slug && getBlogPostBySlug(slug) ? <BlogPost /> : <BlogCategory />;
+}
+
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -28,8 +35,7 @@ function Router() {
         <Route path="/services" component={Services} />
         <Route path="/about" component={About} />
         <Route path="/blog" component={Blog} />
-        <Route path="/blog/:slug" component={BlogPost} />
-        <Route path="/blog/:category" component={BlogCategory} />
+        <Route path="/blog/:slug" component={BlogSlugDispatch} />
         <Route path="/contact" component={Contact} />
         <Route path="/service-areas" component={ServiceAreas} />
         <Route path="/404" component={NotFound} />

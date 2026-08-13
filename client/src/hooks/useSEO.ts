@@ -5,8 +5,10 @@ export interface SEOConfig {
   description: string;
   ogTitle?: string;
   ogDescription?: string;
-  ogImage?: string;
+  ogImage?: string | null;
   canonical?: string;
+  type?: string;
+  publishedTime?: Date | null;
   schema?: Record<string, unknown>;
 }
 

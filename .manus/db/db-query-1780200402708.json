@@ -1,9 +1,0 @@
-{
-  "query": "UPDATE blog_posts SET imageUrl = '/manus-storage/PreparingforOregonExpansion_dcf9858b.jpeg' WHERE slug = 'tech-enabled-eviction-management-oregon';",
-  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway06.us-east-1.prod.aws.tidbcloud.com --port 4000 --user cQzbaZXvQUqywky.root --database EEgHWt2GYcdttMiMvAp3Dc --execute UPDATE blog_posts SET imageUrl = '/manus-storage/PreparingforOregonExpansion_dcf9858b.jpeg' WHERE slug = 'tech-enabled-eviction-management-oregon';",
-  "rows": [],
-  "messages": [],
-  "stdout": "",
-  "stderr": "",
-  "execution_time_ms": 399
-}

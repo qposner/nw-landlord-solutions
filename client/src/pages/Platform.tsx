@@ -1,5 +1,5 @@
 import { ArrowUpRight, BarChart3, Clock3, FileCheck2, Layers3 } from "lucide-react";
-import { portalUrl } from "@/lib/siteData";
+import { assets, portalUrl } from "@/lib/siteData";
 import { PortalCTA, SectionHeader } from "@/components/SharedSections";
 import { useSEO } from "@/hooks/useSEO";
 import { seoData } from "@/lib/seoData";
@@ -34,7 +34,7 @@ export default function Platform() {
             <p>NW Landlord Solutions presents eviction representation as a managed workflow: intake, procedural execution, court-stage coordination, and status visibility for property management companies.</p>
           </div>
           <figure className="portal-screenshot-card portal-screenshot-page">
-            <img src="/manus-storage/page-000_16fd73f0.png" alt="NW Landlord Solutions client portal dashboard list view" />
+            <img src={assets.portalSmall} alt="NW Landlord Solutions client portal dashboard list view" />
             <figcaption>Your entire caseload. Status-visible, document-ready, accessible any time.</figcaption>
           </figure>
         </div>
@@ -65,7 +65,7 @@ export default function Platform() {
             ))}
           </div>
           <figure className="portal-screenshot-card portal-screenshot-wide">
-            <img src="/manus-storage/Screenshot2026-05-20at2.05.45PM_5beffaf1.webp" alt="NW Landlord Solutions client portal case detail progress tracker and notice information" />
+            <img src={assets.portal} alt="NW Landlord Solutions client portal case detail progress tracker and notice information" />
             <figcaption>Every milestone tracked. Every document accessible. No phone call required.</figcaption>
           </figure>
         </div>

@@ -1,7 +1,7 @@
 import { useParams, useLocation } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
-import { trpc } from "@/lib/trpc";
+import { blogPosts, getBlogPostBySlug } from "@/lib/blogData";
 import { Streamdown } from "streamdown";
 import { getBlogPostSchema } from "@/lib/seoData";
 import { AuthorBioCard } from "@/components/AuthorBioCard";
@@ -10,14 +10,9 @@ export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const [, navigate] = useLocation();
 
-  // Fetch blog post from database
-  const { data: post, isLoading, error } = trpc.blog.getBySlug.useQuery(
-    { slug: slug || "" },
-    { enabled: !!slug }
-  );
-
-  // Fetch all blog posts for related articles
-  const { data: allPosts = [] } = trpc.blog.getAll.useQuery();
+  // Look up post from statically bundled data
+  const post = slug ? getBlogPostBySlug(slug) : undefined;
+  const allPosts = blogPosts;
 
   // Get related articles based on geographic logic (Oregon -> Oregon, Washington -> Washington)
   const getRelatedArticles = () => {
@@ -57,26 +52,12 @@ export default function BlogPost() {
         excerpt: post.excerpt,
         date: post.publishedAt?.toISOString() || new Date().toISOString(),
         url: `https://waevictions.com/blog/${post.slug}`,
-        image: post.imageUrl,
+        image: post.imageUrl ?? undefined,
       }),
     } : undefined
   );
 
-  if (isLoading) {
-    return (
-      <div className="section-pad">
-        <div className="container">
-          <div className="animate-pulse space-y-4">
-            <div className="h-8 bg-gray-700 rounded w-3/4"></div>
-            <div className="h-4 bg-gray-700 rounded w-full"></div>
-            <div className="h-96 bg-gray-700 rounded"></div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !post) {
+  if (!post) {
     return (
       <div className="section-pad">
         <div className="container">
@@ -159,7 +140,7 @@ export default function BlogPost() {
 
           {/* Article content */}
           <div className="prose prose-invert max-w-none mb-16">
-            <Streamdown>{post.content || post.htmlContent}</Streamdown>
+            <Streamdown>{post.content || post.htmlContent || ""}</Streamdown>
           </div>
 
           {/* Author Bio Card */}

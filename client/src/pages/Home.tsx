@@ -1,5 +1,5 @@
 import { ArrowUpRight, CheckCircle2, Cpu, Gauge, Network, ReceiptText } from "lucide-react";
-import { portalUrl } from "@/lib/siteData";
+import { assets, portalUrl } from "@/lib/siteData";
 import { HowItWorks, MetricStrip, PortalCTA, ServicesOverview, SectionHeader } from "@/components/SharedSections";
 import { useSEO } from "@/hooks/useSEO";
 import { seoData, getOrganizationSchema } from "@/lib/seoData";
@@ -40,7 +40,7 @@ export default function Home() {
             </div>
           </div>
           <figure className="portal-screenshot-card portal-screenshot-hero">
-            <img src="/manus-storage/steve-000_322b111b.png" alt="NW Landlord Solutions client portal dashboard list view" />
+            <img src={assets.dashboardList} alt="NW Landlord Solutions client portal dashboard list view" />
             <figcaption>Your entire caseload. Status-visible, document-ready, accessible any time.</figcaption>
           </figure>
         </div>
