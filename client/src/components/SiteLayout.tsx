@@ -77,6 +77,11 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
           <div>
             <LogoMark />
             <p className="mt-5 max-w-md text-sm leading-6 text-slate-400">Landlord-side Washington State eviction representation structured for property management companies and portfolio operators.</p>
+            {contact.disclaimer && (
+              <p className="mt-4 max-w-md text-xs leading-5 text-slate-500 border-t border-white/5 pt-4">
+                {contact.disclaimer}
+              </p>
+            )}
           </div>
           <div>
             <p className="eyebrow">Mailing Address</p>
