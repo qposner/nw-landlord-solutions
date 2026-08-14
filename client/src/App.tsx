@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch, useParams } from "wouter";
+import { Route, Switch, useParams, Redirect } from "wouter";
 import { getBlogPostBySlug } from "@/lib/blogData";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -26,7 +26,6 @@ function BlogSlugDispatch() {
 }
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <SiteLayout>
       <Switch>
@@ -38,6 +37,18 @@ function Router() {
         <Route path="/blog/:slug" component={BlogSlugDispatch} />
         <Route path="/contact" component={Contact} />
         <Route path="/service-areas" component={ServiceAreas} />
+        
+        {/* 301 SEO Legacy & Broken Route Redirects */}
+        <Route path="/legal-causes-for-eviction">
+          <Redirect to="/services" />
+        </Route>
+        <Route path="/eviction-process">
+          <Redirect to="/services" />
+        </Route>
+        <Route path="/clark-county-eviction-attorney">
+          <Redirect to="/service-areas" />
+        </Route>
+
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
