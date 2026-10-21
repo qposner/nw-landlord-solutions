@@ -1,6 +1,6 @@
 import { withBase } from "./base";
 
-export const portalUrl = "https://app2.ixfoundry.co/sign-in";
+export const portalUrl = "https://app.alloy-one.com/login";
 
 export const assets = {
   hero: withBase("/images/hero.webp"),
